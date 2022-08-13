@@ -16,6 +16,8 @@ public class XpsAdditions implements ModInitializer {
 
     public static final  String MOD_ID = "xps_additions";
 
+    // Temporary
+    //**************************************************************
     public static final  int XP_PER_BERRIE = 3;
     public static final int shiftKey = 340;
 
@@ -23,7 +25,7 @@ public class XpsAdditions implements ModInitializer {
             new Identifier(MOD_ID, "general"),
             () -> new ItemStack(AdditionItems.MYSTICAL_CANDY)
     );
-
+    //**************************************************************
 
     public static final int XP_PER_MYSTICAL_CANDY = (XP_PER_BERRIE * 4);
 
