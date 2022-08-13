@@ -41,9 +41,9 @@ public class Mystical_Candy extends Item {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         super.appendTooltip(stack, world, tooltip, tooltipContext);
 
-        tooltip.add(Text.translatable("item.xps.more.info.tooltip"));
+        tooltip.add(Text.translatable("item.xps_additions.more.info.tooltip"));
         if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), XpsAdditions.shiftKey)) {
-            tooltip.remove(Text.translatable("item.xps.more.info.tooltip"));
+            tooltip.remove(Text.translatable("item.xps_additions.more.info.tooltip"));
 
             tooltip.add(Text.translatable("item.tooltip.mystical_candy", XpsAdditions.XP_PER_MYSTICAL_CANDY).formatted(Formatting.WHITE));
             tooltip.add(Text.translatable("item.tooltip.mystical_candy_effect_Giggle",
