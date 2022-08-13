@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.12-SNAPSHOT'
+	id 'fabric-loom' version '0.11-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -28,7 +28,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 
-	modImplementation files("build/depend/xp_obelisk-0.4.4.r_for_1.18.x_Fabric.jar")
+	//modImplementation files("build/depend/xp_obelisk-0.4.4.r_for_1.18.x_Fabric.jar")
 }
 
 processResources {
