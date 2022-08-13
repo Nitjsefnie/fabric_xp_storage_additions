@@ -1,0 +1,12 @@
+{
+  "effect.xps_additions.exp": "Hiccup",
+
+  "item.xps_additions.mystical_candy": "Mystical Candy",
+  "item.tooltip.mystical_candy": "Drops %sXP when eaten",
+  "item.tooltip.mystical_candy_effect_Giggle": "Hiccup %s chance %s",
+  "item.tooltip.mystical_candy_effect_Haste": "Haste %s chance %s",
+
+  "block.xps_additions.soul_copper_door": "Soulcopper Door",
+  "block.xps_additions.soul_copper_trap_door": "Soulcopper Trapdoor",
+  "block.xps_additions.soul_copper_pressure_plate": "Soulcopper Pressure Plate"
+}

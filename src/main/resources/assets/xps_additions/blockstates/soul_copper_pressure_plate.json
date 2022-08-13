@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "xps_additions:block/soul_copper_pressure_plate_up"
+    },
+    "powered=true": {
+      "model": "xps_additions:block/soul_copper_pressure_plate_down"
+    }
+  }
+}

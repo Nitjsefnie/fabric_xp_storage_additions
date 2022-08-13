@@ -1,0 +1,12 @@
+{
+  "effect.xps_additions.exp": "Schluckauf",
+
+  "item.xps_additions.mystical_candy": "Mystische Süßigkeit",
+  "item.tooltip.mystical_candy": "Droppt %sEP beim essen",
+  "item.tooltip.mystical_candy_effect_Giggle": "Schluckauf %s chance: %s",
+  "item.tooltip.mystical_candy_effect_Haste": "Haste %s chance %s",
+
+  "block.xps_additions.soul_copper_door": "Seelenkupfertür",
+  "block.xps_additions.soul_copper_trap_door": "Seelenkupferfalltür",
+  "block.xps_additions.soul_copper_pressure_plate": "Seelenkupferdruckplatte"
+}

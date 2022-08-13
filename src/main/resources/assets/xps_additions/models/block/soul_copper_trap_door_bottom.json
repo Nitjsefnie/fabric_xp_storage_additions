@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/thin_block",
+	"textures": {
+		"0": "xps_additions:block/soul_copper_trap_door",
+		"1": "xps_additions:block/soul_copper_door_ends",
+		"particle": "xps_additions:block/soul_copper_trap_door"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 3, 16],
+			"faces": {
+				"north": {"uv": [0, 3, 16, 0], "texture": "#1", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 3], "rotation": 180, "texture": "#1", "cullface": "east"},
+				"south": {"uv": [0, 3, 16, 0], "texture": "#1", "cullface": "south"},
+				"west": {"uv": [0, 3, 16, 0], "texture": "#1", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "down"}
+			}
+		}
+	]
+}
