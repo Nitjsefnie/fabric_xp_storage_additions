@@ -1,6 +1,5 @@
 package com.notker.xps_additions.items;
 
-import com.notker.xp_storage.XpStorage;
 import com.notker.xps_additions.XpsAdditions;
 import com.notker.xps_additions.regestry.AdditionItems;
 import com.notker.xps_additions.TooltipHelper;
@@ -16,7 +15,6 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.StringHelper;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -45,7 +43,7 @@ public class Mystical_Candy extends Item {
         super.appendTooltip(stack, world, tooltip, tooltipContext);
 
         tooltip.add(new TranslatableText("item.xps.more.info.tooltip"));
-        if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), XpStorage.shiftKey)) {
+        if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), XpsAdditions.shiftKey)) {
             tooltip.remove(new TranslatableText("item.xps.more.info.tooltip"));
 
             tooltip.add(new TranslatableText("item.tooltip.mystical_candy", XpsAdditions.XP_PER_MYSTICAL_CANDY).formatted(Formatting.WHITE));

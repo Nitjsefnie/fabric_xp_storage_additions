@@ -27,8 +27,8 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-
-	//modImplementation files("build/depend/xp_obelisk-0.4.4.r_for_1.18.x_Fabric.jar")
+	//modImplementation "com.notker.xp_storage:xp_obelisk:${project.xp_obelisk_version}"
+	//modImplementation files("depend/xp_obelisk-0.4.4.r_for_1.18.x_Fabric.jar")
 }
 
 processResources {
@@ -58,17 +58,10 @@ jar {
 }
 
 // configure the maven publication
-// configure the maven publication
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
-			// add all the jars that should be included when publishing to maven
-			artifact(remapJar) {
-				builtBy remapJar
-			}
-			artifact(sourcesJar) {
-				builtBy remapSourcesJar
-			}
+			from components.java
 		}
 	}
 

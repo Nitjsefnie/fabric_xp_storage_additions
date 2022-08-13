@@ -1,6 +1,5 @@
 package com.notker.xps_additions.regestry;
 
-import com.notker.xp_storage.XpStorage;
 import com.notker.xps_additions.XpsAdditions;
 import com.notker.xps_additions.items.Mystical_Candy;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -22,7 +21,7 @@ public class AdditionItems {
 
     // Items
     public static final Item MYSTICAL_CANDY = new Mystical_Candy(new Item.Settings()
-            .group(XpStorage.ITEM_GROUP)
+            .group(XpsAdditions.ITEM_GROUP)
             .food(new FoodComponent.Builder()
                     .statusEffect(new StatusEffectInstance(XpsAdditions.GIGGLE, GIGGLE_EFFECT_DURATION, 0), GIGGLE_EFFECT_CHANCE)
                     .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, HASTE_EFFECT_DURATION, HASTE_EFFECT_AMPLIFIER), HASTE_EFFECT_CHANCE)
@@ -33,9 +32,9 @@ public class AdditionItems {
                     .build()));
 
     //Block Items
-    public static final BlockItem SOUL_COPPER_DOOR_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_DOOR, new Item.Settings().group(XpStorage.ITEM_GROUP));
-    public static final BlockItem SOUL_COPPER_TRAP_DOOR_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_TRAP_DOOR, new Item.Settings().group(XpStorage.ITEM_GROUP));
-    public static final BlockItem SOUL_COPPER_PRESSURE_PLATE_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_PRESSURE_PLATE, new Item.Settings().group(XpStorage.ITEM_GROUP));
+    public static final BlockItem SOUL_COPPER_DOOR_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_DOOR, new Item.Settings().group(XpsAdditions.ITEM_GROUP));
+    public static final BlockItem SOUL_COPPER_TRAP_DOOR_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_TRAP_DOOR, new Item.Settings().group(XpsAdditions.ITEM_GROUP));
+    public static final BlockItem SOUL_COPPER_PRESSURE_PLATE_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_PRESSURE_PLATE, new Item.Settings().group(XpsAdditions.ITEM_GROUP));
 
     public static void registerItems() {
         //Items
