@@ -9,8 +9,8 @@
     "Meridanus"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/xp-obelisk-additions",
+    "sources": "https://github.com/Meridanus/fabric_xp_storage_additions"
   },
 
   "license": "MIT",
