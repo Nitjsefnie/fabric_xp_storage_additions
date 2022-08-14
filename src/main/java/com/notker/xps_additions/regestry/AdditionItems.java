@@ -12,7 +12,7 @@ import net.minecraft.util.registry.Registry;
 public class AdditionItems {
 
 
-    private static BlockItem createBlockItem (Block block) {
+    private static BlockItem createBlockItemWithGroup(Block block) {
         return new BlockItem(block, new Item.Settings().group(XpStorage.ITEM_GROUP));
     }
 
@@ -25,9 +25,9 @@ public class AdditionItems {
         Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID,"mystical_candy"), MYSTICAL_CANDY);
 
         //BlockItems
-        Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_door"), createBlockItem(AdditionBlocks.SOUL_COPPER_DOOR));
-        Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_trap_door"), createBlockItem(AdditionBlocks.SOUL_COPPER_TRAP_DOOR));
-        Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_pressure_plate"), createBlockItem(AdditionBlocks.SOUL_COPPER_PRESSURE_PLATE));
-        Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_bars"), createBlockItem(AdditionBlocks.SOUL_COPPER_BARS));
+        Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_door"), createBlockItemWithGroup(AdditionBlocks.SOUL_COPPER_DOOR));
+        Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_trap_door"), createBlockItemWithGroup(AdditionBlocks.SOUL_COPPER_TRAP_DOOR));
+        Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_pressure_plate"), createBlockItemWithGroup(AdditionBlocks.SOUL_COPPER_PRESSURE_PLATE));
+        Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_bars"), createBlockItemWithGroup(AdditionBlocks.SOUL_COPPER_BARS));
     }
 }
