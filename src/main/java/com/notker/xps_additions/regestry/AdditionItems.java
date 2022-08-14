@@ -13,24 +13,8 @@ import net.minecraft.util.registry.Registry;
 
 public class AdditionItems {
 
-    public static final int HASTE_EFFECT_DURATION = 1700;
-    public static final float HASTE_EFFECT_CHANCE = 0.75f;
-    public static final int HASTE_EFFECT_AMPLIFIER = 4;
-
-    public static final int GIGGLE_EFFECT_DURATION = 200;
-    public static final float GIGGLE_EFFECT_CHANCE = 0.25f;
-
     // Items
-    public static final Item MYSTICAL_CANDY = new Mystical_Candy(new Item.Settings()
-            .group(XpStorage.ITEM_GROUP)
-            .food(new FoodComponent.Builder()
-                    .statusEffect(new StatusEffectInstance(XpsAdditions.GIGGLE, GIGGLE_EFFECT_DURATION, 0), GIGGLE_EFFECT_CHANCE)
-                    .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, HASTE_EFFECT_DURATION, HASTE_EFFECT_AMPLIFIER), HASTE_EFFECT_CHANCE)
-                    .hunger(2)
-                    .saturationModifier(0.8f)
-                    .snack()
-                    .alwaysEdible()
-                    .build()));
+    public static final Item MYSTICAL_CANDY = new Mystical_Candy();
 
     //Block Items
     public static final BlockItem SOUL_COPPER_DOOR_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_DOOR, new Item.Settings().group(XpStorage.ITEM_GROUP));

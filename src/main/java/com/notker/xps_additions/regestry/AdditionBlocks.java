@@ -15,37 +15,10 @@ import net.minecraft.util.registry.Registry;
 
 public class AdditionBlocks {
 
-    public static final SoulCopperDoorBlock SOUL_COPPER_DOOR = new SoulCopperDoorBlock(FabricBlockSettings
-            .of(Material.METAL)
-            .sounds(BlockSoundGroup.METAL)
-            .strength(5f, 5f)
-            .nonOpaque()
-            .requiresTool()
-    );
-
-    public static final SoulCopperTrapDoorBlock SOUL_COPPER_TRAP_DOOR = new SoulCopperTrapDoorBlock(FabricBlockSettings
-            .of(Material.METAL)
-            .sounds(BlockSoundGroup.METAL)
-            .strength(5f, 5f)
-            .nonOpaque()
-            .requiresTool()
-    );
-
-    public static final SoulCopperPressurePlate SOUL_COPPER_PRESSURE_PLATE = new SoulCopperPressurePlate(PressurePlateBlock.ActivationRule.MOBS, FabricBlockSettings
-            .of(Material.METAL)
-            .sounds(BlockSoundGroup.METAL)
-            .strength(0.5f, 0.5f)
-            .nonOpaque()
-            .requiresTool()
-    );
-
-    public static final SoulCopperBars SOUL_COPPER_BARS = new SoulCopperBars( FabricBlockSettings
-            .of(Material.METAL)
-            .sounds(BlockSoundGroup.METAL)
-            .strength(6f, 5f)
-            .nonOpaque()
-            .requiresTool()
-    );
+    public static final SoulCopperDoorBlock SOUL_COPPER_DOOR = new SoulCopperDoorBlock();
+    public static final SoulCopperTrapDoorBlock SOUL_COPPER_TRAP_DOOR = new SoulCopperTrapDoorBlock();
+    public static final SoulCopperPressurePlate SOUL_COPPER_PRESSURE_PLATE = new SoulCopperPressurePlate();
+    public static final SoulCopperBars SOUL_COPPER_BARS = new SoulCopperBars();
 
 
 

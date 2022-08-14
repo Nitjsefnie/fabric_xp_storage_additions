@@ -9,13 +9,18 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-@SuppressWarnings("UnstableApiUsage")
 public class XpsAdditions implements ModInitializer {
 
     public static final  String MOD_ID = "xps_additions";
 
     public static final int XP_PER_MYSTICAL_CANDY = (XpStorage.XP_PER_BERRIE * 4);
 
+    public static final int HASTE_EFFECT_DURATION = 1700;
+    public static final float HASTE_EFFECT_CHANCE = 0.75f;
+    public static final int HASTE_EFFECT_AMPLIFIER = 4;
+
+    public static final int GIGGLE_EFFECT_DURATION = 200;
+    public static final float GIGGLE_EFFECT_CHANCE = 0.25f;
 
 
 
