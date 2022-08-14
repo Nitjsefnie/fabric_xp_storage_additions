@@ -22,6 +22,10 @@ public class XpsAdditions implements ModInitializer {
     public static final int GIGGLE_EFFECT_DURATION = 200;
     public static final float GIGGLE_EFFECT_CHANCE = 0.25f;
 
+    public static Identifier createModIdIdentifier (String path) {
+        return new Identifier(MOD_ID, path);
+    }
+
 
 
     public static final StatusEffect GIGGLE = new GiggleStatusEffect();

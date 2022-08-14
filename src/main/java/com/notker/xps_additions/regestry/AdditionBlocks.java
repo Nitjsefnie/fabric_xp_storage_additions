@@ -23,9 +23,9 @@ public class AdditionBlocks {
 
 
     public static void registerBlocks() {
-        Registry.register(Registry.BLOCK, new Identifier(XpsAdditions.MOD_ID, "soul_copper_door"), SOUL_COPPER_DOOR);
-        Registry.register(Registry.BLOCK, new Identifier(XpsAdditions.MOD_ID, "soul_copper_trap_door"), SOUL_COPPER_TRAP_DOOR);
-        Registry.register(Registry.BLOCK, new Identifier(XpsAdditions.MOD_ID, "soul_copper_pressure_plate"), SOUL_COPPER_PRESSURE_PLATE);
-        Registry.register(Registry.BLOCK, new Identifier(XpsAdditions.MOD_ID, "soul_copper_bars"), SOUL_COPPER_BARS);
+        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_door"), SOUL_COPPER_DOOR);
+        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_trap_door"), SOUL_COPPER_TRAP_DOOR);
+        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_pressure_plate"), SOUL_COPPER_PRESSURE_PLATE);
+        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_bars"), SOUL_COPPER_BARS);
     }
 }
