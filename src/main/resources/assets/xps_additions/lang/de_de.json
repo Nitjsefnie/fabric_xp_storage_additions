@@ -11,5 +11,6 @@
 
   "block.xps_additions.soul_copper_door": "Seelenkupfertür",
   "block.xps_additions.soul_copper_trap_door": "Seelenkupferfalltür",
-  "block.xps_additions.soul_copper_pressure_plate": "Seelenkupferdruckplatte"
+  "block.xps_additions.soul_copper_pressure_plate": "Seelenkupferdruckplatte",
+  "block.xps_additions.soul_copper_bars": "Seelenkupfergitter"
 }

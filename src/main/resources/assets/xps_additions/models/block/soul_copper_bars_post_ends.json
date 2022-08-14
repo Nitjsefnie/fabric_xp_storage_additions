@@ -1,0 +1,26 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "xps_additions:block/soul_copper_bars",
+		"edge": "xps_additions:block/soul_copper_bars"
+	},
+	"elements": [
+		{
+			"from": [7.5, 0.001, 7.5],
+			"to": [8.5, 0.001, 8.5],
+			"faces": {
+				"up": {"uv": [7.5, 7.5, 8.5, 8.5], "texture": "#edge"},
+				"down": {"uv": [7.5, 7.5, 8.5, 8.5], "texture": "#edge"}
+			}
+		},
+		{
+			"from": [7.5, 15.999, 7.5],
+			"to": [8.5, 15.999, 8.5],
+			"faces": {
+				"up": {"uv": [7.5, 7.5, 8.5, 8.5], "texture": "#edge"},
+				"down": {"uv": [7.5, 7.5, 8.5, 8.5], "texture": "#edge"}
+			}
+		}
+	]
+}

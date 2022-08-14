@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "xps_additions:block/soul_copper_bars"
+  }
+}

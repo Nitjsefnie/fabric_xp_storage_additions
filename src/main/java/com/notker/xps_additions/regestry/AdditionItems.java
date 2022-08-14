@@ -35,6 +35,7 @@ public class AdditionItems {
     public static final BlockItem SOUL_COPPER_DOOR_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_DOOR, new Item.Settings().group(XpsAdditions.ITEM_GROUP));
     public static final BlockItem SOUL_COPPER_TRAP_DOOR_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_TRAP_DOOR, new Item.Settings().group(XpsAdditions.ITEM_GROUP));
     public static final BlockItem SOUL_COPPER_PRESSURE_PLATE_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_PRESSURE_PLATE, new Item.Settings().group(XpsAdditions.ITEM_GROUP));
+    public static final BlockItem SOUL_COPPER_BARS_ITEM = new BlockItem(AdditionBlocks.SOUL_COPPER_BARS, new Item.Settings().group(XpsAdditions.ITEM_GROUP));
 
     public static void registerItems() {
         //Items
@@ -44,5 +45,6 @@ public class AdditionItems {
         Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_door"), SOUL_COPPER_DOOR_ITEM);
         Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_trap_door"), SOUL_COPPER_TRAP_DOOR_ITEM);
         Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_pressure_plate"), SOUL_COPPER_PRESSURE_PLATE_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(XpsAdditions.MOD_ID, "soul_copper_bars"), SOUL_COPPER_BARS_ITEM);
     }
 }
