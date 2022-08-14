@@ -23,6 +23,6 @@ public final class TooltipHelper {
     }
 
     public static String chanceToString (float chance) {
-        return String.valueOf((int)(100 * chance)) + "%";
+        return (int) (100 * chance) + "%";
     }
 }
