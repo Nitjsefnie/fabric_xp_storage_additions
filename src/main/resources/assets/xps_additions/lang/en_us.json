@@ -2,6 +2,8 @@
   "effect.xps_additions.giggle": "Hiccup",
 
   "item.xps_additions.mystical_candy": "Mystical Candy",
+  "item.xps_additions.raw_essence": "Raw Essence",
+  "item.xps_additions.raw_essence_shard": "Raw Essence Shard",
 
   "item.tooltip.mystical_candy": "Drops %sXP when eaten",
   "item.tooltip.mystical_candy_effect_Giggle": "Hiccup %s chance %s",
