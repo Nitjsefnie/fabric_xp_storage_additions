@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "xps_additions:raw_essence_shard"
+    }
+  },
+  "result": {
+    "item": "xps_additions:raw_essence",
+    "count": 1
+  }
+}

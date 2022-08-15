@@ -22,6 +22,10 @@ public class XpsAdditions implements ModInitializer {
     public static final int GIGGLE_EFFECT_DURATION = 200;
     public static final float GIGGLE_EFFECT_CHANCE = 0.25f;
 
+
+    public static final int RAW_ESSENCE_SHARD_FUEL_DURATION = 16 * 200; //Items * smelt time
+    public static final int RAW_ESSENCE_FUEL_DURATION = RAW_ESSENCE_SHARD_FUEL_DURATION * 10; //Items * smelt time
+
     public static Identifier createModIdIdentifier (String path) {
         return new Identifier(MOD_ID, path);
     }
