@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"texture": "xps_additions:block/block_xp_obelisk_plate_animation",
+		"texture": "xps_additions:block/xp_obelisk_plate_animation",
 		"particle": "xps_additions:block/soul_copper_pressure_plate"
 	},
 	"elements": [

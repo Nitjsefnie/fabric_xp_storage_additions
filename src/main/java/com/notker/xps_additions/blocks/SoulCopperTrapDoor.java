@@ -1,13 +1,14 @@
 package com.notker.xps_additions.blocks;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.DoorBlock;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Material;
+import net.minecraft.block.TrapdoorBlock;
 import net.minecraft.sound.BlockSoundGroup;
 
-public class SoulCopperDoorBlock extends DoorBlock {
+public class SoulCopperTrapDoor extends TrapdoorBlock {
 
-    public SoulCopperDoorBlock() {
+    public SoulCopperTrapDoor() {
         super(FabricBlockSettings
                 .of(Material.METAL)
                 .sounds(BlockSoundGroup.METAL)
