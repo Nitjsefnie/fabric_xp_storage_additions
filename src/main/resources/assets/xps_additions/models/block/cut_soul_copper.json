@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "xps_additions:block/cut_soul_copper"
+  }
+}

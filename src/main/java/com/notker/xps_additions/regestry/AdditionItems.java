@@ -26,6 +26,9 @@ public class AdditionItems {
     public static final BlockItem SOUL_COPPER_TRAP_DOOR_ITEM = createBlockItemWithGroup(AdditionBlocks.SOUL_COPPER_TRAP_DOOR);
     public static final BlockItem SOUL_COPPER_PRESSURE_PLATE_ITEM = createBlockItemWithGroup(AdditionBlocks.SOUL_COPPER_PRESSURE_PLATE);
     public static final BlockItem SOUL_COPPER_BARS_ITEM = createBlockItemWithGroup(AdditionBlocks.SOUL_COPPER_BARS);
+    public static final BlockItem CUT_SOUL_COPPER_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER);
+    public static final BlockItem CUT_SOUL_COPPER_SLAB_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER_SLAB);
+    public static final BlockItem CUT_SOUL_COPPER_STAIRS_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER_STAIRS);
 
     public static void registerItems() {
         //Items
@@ -36,5 +39,8 @@ public class AdditionItems {
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_trap_door"), SOUL_COPPER_TRAP_DOOR_ITEM);
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_pressure_plate"), SOUL_COPPER_PRESSURE_PLATE_ITEM);
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_bars"), SOUL_COPPER_BARS_ITEM);
+        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper"), CUT_SOUL_COPPER_ITEM);
+        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper_slab"), CUT_SOUL_COPPER_SLAB_ITEM);
+        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper_stairs"), CUT_SOUL_COPPER_STAIRS_ITEM);
     }
 }
