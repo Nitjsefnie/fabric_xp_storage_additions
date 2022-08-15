@@ -1,15 +1,17 @@
 {
-  "item.xps_additions.more.info.tooltip": "§8Drücke §6Shift §8für mehr Info",
-  "itemGroup.xps_additions.general": "EP-Lager Erweiterungen",
-
-  "effect.xps_additions.exp": "Schluckauf",
+  "effect.xps_additions.giggle": "Schluckauf",
 
   "item.xps_additions.mystical_candy": "Mystische Süßigkeit",
-  "item.tooltip.mystical_candy": "Droppt %sEP beim essen",
+
+  "item.tooltip.mystical_candy": "Dropt %sEP beim essen",
   "item.tooltip.mystical_candy_effect_Giggle": "Schluckauf %s chance: %s",
   "item.tooltip.mystical_candy_effect_Haste": "Haste %s chance %s",
 
   "block.xps_additions.soul_copper_door": "Seelenkupfertür",
   "block.xps_additions.soul_copper_trap_door": "Seelenkupferfalltür",
-  "block.xps_additions.soul_copper_pressure_plate": "Seelenkupferdruckplatte"
+  "block.xps_additions.soul_copper_pressure_plate": "Seelenkupferdruckplatte",
+  "block.xps_additions.soul_copper_bars": "Seelenkupfergitter",
+  "block.xps_additions.cut_soul_copper": "Geschnittener Seelenkupferblock",
+  "block.xps_additions.cut_soul_copper_slab": "Geschnittene Seelenkupferstufe",
+  "block.xps_additions.cut_soul_copper_stairs": "Geschnittene Seelenkupfertreppe"
 }

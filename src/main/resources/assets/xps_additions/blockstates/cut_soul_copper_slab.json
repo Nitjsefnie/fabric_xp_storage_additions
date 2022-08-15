@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "xps_additions:block/cut_soul_copper_slab"
+    },
+    "type=double": {
+      "model": "xps_additions:block/cut_soul_copper"
+    },
+    "type=top": {
+      "model": "xps_additions:block/cut_soul_copper_slab_top"
+    }
+  }
+}
