@@ -5,9 +5,15 @@ import com.notker.xps_additions.effects.GiggleStatusEffect;
 import com.notker.xps_additions.regestry.AdditionBlocks;
 import com.notker.xps_additions.regestry.AdditionItems;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+
+import java.util.Map;
+
+import static java.util.Map.entry;
 
 public class XpsAdditions implements ModInitializer {
 
@@ -25,6 +31,28 @@ public class XpsAdditions implements ModInitializer {
 
     public static final int RAW_ESSENCE_SHARD_FUEL_DURATION = 16 * 200; //Items * smelt time
     public static final int RAW_ESSENCE_FUEL_DURATION = RAW_ESSENCE_SHARD_FUEL_DURATION * 10; //Items * smelt time
+
+
+    public static final Map<Block, Block> BLOCKS_TO_REBARK = Map.ofEntries(
+            entry(Blocks.STRIPPED_OAK_WOOD, Blocks.OAK_WOOD),
+            entry(Blocks.STRIPPED_OAK_LOG, Blocks.OAK_LOG),
+            entry(Blocks.STRIPPED_DARK_OAK_WOOD, Blocks.DARK_OAK_WOOD),
+            entry(Blocks.STRIPPED_DARK_OAK_LOG, Blocks.DARK_OAK_LOG),
+            entry(Blocks.STRIPPED_ACACIA_WOOD, Blocks.ACACIA_WOOD),
+            entry(Blocks.STRIPPED_ACACIA_LOG, Blocks.ACACIA_LOG),
+            entry(Blocks.STRIPPED_BIRCH_WOOD, Blocks.BIRCH_WOOD),
+            entry(Blocks.STRIPPED_BIRCH_LOG, Blocks.BIRCH_LOG),
+            entry(Blocks.STRIPPED_JUNGLE_WOOD, Blocks.JUNGLE_WOOD),
+            entry(Blocks.STRIPPED_JUNGLE_LOG, Blocks.JUNGLE_LOG),
+            entry(Blocks.STRIPPED_SPRUCE_WOOD, Blocks.SPRUCE_WOOD),
+            entry(Blocks.STRIPPED_SPRUCE_LOG, Blocks.SPRUCE_LOG),
+            entry(Blocks.STRIPPED_WARPED_STEM, Blocks.WARPED_STEM),
+            entry(Blocks.STRIPPED_WARPED_HYPHAE, Blocks.WARPED_HYPHAE),
+            entry(Blocks.STRIPPED_CRIMSON_STEM, Blocks.CRIMSON_STEM),
+            entry(Blocks.STRIPPED_CRIMSON_HYPHAE, Blocks.CRIMSON_HYPHAE)
+    );
+
+
 
     public static Identifier createModIdIdentifier (String path) {
         return new Identifier(MOD_ID, path);

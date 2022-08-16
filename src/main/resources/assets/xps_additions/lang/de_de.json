@@ -4,6 +4,8 @@
   "item.xps_additions.mystical_candy": "Mystische Süßigkeit",
   "item.xps_additions.raw_essence": "Rohe Essenz",
   "item.xps_additions.raw_essence_shard": "Roher Essenzsplitter",
+  "item.xps_additions.staff_of_rebark": "Rindenstab",
+  "item.xps_additions.essence_crystal": "Essenzkristall",
 
   "item.tooltip.mystical_candy": "Dropt %sEP beim essen",
   "item.tooltip.mystical_candy_effect_Giggle": "Schluckauf %s chance: %s",

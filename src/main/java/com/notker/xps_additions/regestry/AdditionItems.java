@@ -1,15 +1,14 @@
 package com.notker.xps_additions.regestry;
 
 import com.notker.xp_storage.XpStorage;
-import com.notker.xp_storage.regestry.ModFluids;
 import com.notker.xps_additions.XpsAdditions;
 import com.notker.xps_additions.items.Mystical_Candy;
+import com.notker.xps_additions.items.StaffOfRebark;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
@@ -20,13 +19,18 @@ public class AdditionItems {
         return new BlockItem(block, new Item.Settings().group(XpStorage.ITEM_GROUP));
     }
 
+    private static Item.Settings newSettings() {
+        return new Item.Settings().group(XpStorage.ITEM_GROUP);
+    }
 
 
 
     // Items
     public static final Item MYSTICAL_CANDY = new Mystical_Candy();
-    public static final Item RAW_ESSENCE = new Item(new Item.Settings().group(XpStorage.ITEM_GROUP).rarity(Rarity.RARE));
-    public static final Item RAW_ESSENCE_SHARD = new Item(new Item.Settings().group(XpStorage.ITEM_GROUP).rarity(Rarity.RARE));
+    public static final Item RAW_ESSENCE = new Item(newSettings().rarity(Rarity.RARE));
+    public static final Item RAW_ESSENCE_SHARD = new Item(newSettings().rarity(Rarity.RARE));
+    public static final Item STAFF_OF_REBARK = new StaffOfRebark(newSettings().rarity(Rarity.EPIC).maxDamage(1561));
+    public static final Item ESSENCE_CRYSTAL = new Item(newSettings().rarity(Rarity.EPIC));
 
     //Block Items
     public static final BlockItem SOUL_COPPER_DOOR_ITEM = createBlockItemWithGroup(AdditionBlocks.SOUL_COPPER_DOOR);
@@ -42,6 +46,8 @@ public class AdditionItems {
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("mystical_candy"), MYSTICAL_CANDY);
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("raw_essence"), RAW_ESSENCE);
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("raw_essence_shard"), RAW_ESSENCE_SHARD);
+        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("staff_of_rebark"), STAFF_OF_REBARK);
+        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("essence_crystal"), ESSENCE_CRYSTAL);
 
         //BlockItems
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_door"), SOUL_COPPER_DOOR_ITEM);
