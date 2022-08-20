@@ -129,6 +129,12 @@ public class XpItemInserterEntity extends BlockEntity implements ImplementedInve
                             break;
 
                         }
+                        if (itemStackToInsert.getItem().equals(Items.SCULK)) {
+                            mbToInsert += XpStorage.MB_PER_XP * itemStackToInsert.getCount();
+                            entity.getItems().set(i, ItemStack.EMPTY);
+                            break;
+
+                        }
                     }
                 }
                 if (mbToInsert <= 0) {
