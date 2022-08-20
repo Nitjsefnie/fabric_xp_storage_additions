@@ -1,47 +1,80 @@
 package com.notker.xps_additions.screen;
 
-import java.util.Optional;
-
 import com.mojang.blaze3d.systems.RenderSystem;
 
+import com.notker.xp_storage.XpFunctions;
+import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
 
 public class PositionedScreen extends HandledScreen<ScreenHandler> {
-    private static final Identifier TEXTURE = new Identifier("minecraft", "textures/gui/container/dispenser.png");
+    private static final Identifier TEXTURE = new Identifier("xps_additions", "textures/gui/container/xp_item_inserter.png");
+    BoxScreenHandler screenHandler;
 
     public PositionedScreen(ScreenHandler handler, PlayerInventory inventory, Text title) {
-        super(handler, inventory, getPositionText(handler).orElse(title));
+        super(handler, inventory, getPositionText(handler));
+        screenHandler = (BoxScreenHandler) handler;
     }
 
-    private static Optional<Text> getPositionText(ScreenHandler handler) {
-        if (handler instanceof PositionedScreenHandler) {
-            BlockPos pos = ((PositionedScreenHandler) handler).getPos();
-            return pos != null ? Optional.of(new TranslatableText("block.xps_additions.xp_item_inserter")) : Optional.empty();
-        } else {
-            return Optional.empty();
-        }
+    private static Text getPositionText(ScreenHandler handler) {
+        return new TranslatableText("block.xps_additions.xp_item_inserter");
     }
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+        int xp = screenHandler.getSyncedNumber();
+        int y = ((height - backgroundHeight) / 2) + 6;
+        int x = (width - textRenderer.getWidth(Integer.toString(xp))) / 2;
+
+        int xStorage = (width - textRenderer.getWidth(new TranslatableText("block.xps.block_xp_obelisk"))) / 2;
+
+
+        //textRenderer.draw(matrices, "text", 0, 0, 65280);
         renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
         drawMouseoverTooltip(matrices, mouseX, mouseY);
+        textRenderer.draw(matrices, new TranslatableText("block.xps.block_xp_obelisk"), xStorage, y - 15, 4210752);
+
+
+        RenderSystem.setShaderTexture(0, DrawableHelper.GUI_ICONS_TEXTURE);
+        drawTexture(matrices,  (width - 182) / 2  , y + 5, 0, 64, 182, 5);
+
+
+        int containerLevel = XpFunctions.getLevelFromExp(xp);
+        int container_excess_xp = xp - XpFunctions.get_total_xp_value_from_level(containerLevel);
+        int container_next_level_xp = XpFunctions.getToNextExperienceLevel(containerLevel);
+        float container_progress = ((1f / container_next_level_xp) * container_excess_xp);
+
+        if (container_progress > 0) {
+           int scaledWidth = (int)(container_progress * 183.0F);
+            drawTexture(matrices, (width - 182) / 2 , y + 5, 0, 69, scaledWidth, 5);
+        }
+
+        //Draw Level String
+        String string = String.valueOf(containerLevel);
+        int levelStringCenter = (width - textRenderer.getWidth(string)) / 2;
+
+        textRenderer.draw(matrices, string, (levelStringCenter + 1), y, 0);
+        textRenderer.draw(matrices, string, (levelStringCenter - 1), y, 0);
+        textRenderer.draw(matrices, string, levelStringCenter, (y + 1), 0);
+        textRenderer.draw(matrices, string, levelStringCenter, (y - 1), 0);
+        textRenderer.draw(matrices, string, levelStringCenter, y, 8453920);
     }
 
     @Override
     protected void init() {
         super.init();
         // Center the title
-        titleX = (backgroundWidth - textRenderer.getWidth(title)) / 2;
+        backgroundHeight = 200;
+        this.titleX = (backgroundWidth - textRenderer.getWidth(title)) / 2;
+
+
+
     }
 
     @Override
@@ -49,7 +82,7 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, TEXTURE);
         int x = (width - backgroundWidth) / 2;
-        int y = (height - backgroundHeight) / 2;
+        int y = -17 + (height - backgroundHeight) / 2;
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
     }
 }

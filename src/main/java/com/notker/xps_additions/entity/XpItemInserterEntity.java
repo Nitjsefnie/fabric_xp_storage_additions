@@ -22,6 +22,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.state.property.Properties;
@@ -36,7 +37,32 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 @SuppressWarnings("UnstableApiUsage")
-public class XpItemInserterEntity extends BlockEntity implements ImplementedInventory, ExtendedScreenHandlerFactory {
+public class XpItemInserterEntity extends BlockEntity implements ImplementedInventory, ExtendedScreenHandlerFactory{
+
+
+    private int syncedInt;
+
+    //PropertyDelegate is an interface which we will implement inline here.
+    //It can normally contain multiple integers as data identified by the index, but in this example we only have one.
+    private final PropertyDelegate propertyDelegate = new PropertyDelegate() {
+        @Override
+        public int get(int index) {
+            return syncedInt;
+        }
+
+        @Override
+        public void set(int index, int value) {
+            syncedInt = value;
+        }
+
+        //this is supposed to return the amount of integers you have in your delegate, in our example only one
+        @Override
+        public int size() {
+            return 1;
+        }
+    };
+
+
 
     private final DefaultedList<ItemStack> items = DefaultedList.ofSize(size(), ItemStack.EMPTY);
     public XpItemInserterEntity(BlockPos pos, BlockState state) {
@@ -81,6 +107,7 @@ public class XpItemInserterEntity extends BlockEntity implements ImplementedInve
             Optional<StorageBlockEntity> storage = world.getBlockEntity(pos, ModBlocks.STORAGE_BLOCK_ENTITY);
 
             if (storage.isPresent()) {
+                entity.syncedInt = storage.get().getContainerExperience();
                 int mbToInsert = 0;
                 for (int i = 0; i < XpsAdditions.ITEM_SLOTS; i++) {
                     ItemStack itemStackToInsert = entity.getItems().get(i);
@@ -136,7 +163,7 @@ public class XpItemInserterEntity extends BlockEntity implements ImplementedInve
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new BoxScreenHandler(syncId, inv, this);
+        return new BoxScreenHandler(syncId, inv, this, propertyDelegate);
     }
 
 }

@@ -18,29 +18,34 @@ package com.notker.xps_additions.screen;/*
 import com.notker.xps_additions.XpsAdditions;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.Generic3x3ContainerScreenHandler;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.math.BlockPos;
 
 
-public class BoxScreenHandler extends Generic3x3ContainerScreenHandler implements PositionedScreenHandler {
-    private final BlockPos pos;
+public class BoxScreenHandler extends Generic3x3ContainerScreenHandler {
+    PropertyDelegate propertyDelegate;
 
     public BoxScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf) {
-        super(syncId, playerInventory);
-        this.pos = buf.readBlockPos();
+        this(syncId, playerInventory, new SimpleInventory(XpsAdditions.ITEM_SLOTS), new ArrayPropertyDelegate(1));
+        //super(syncId, playerInventory);
     }
 
-    public BoxScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+    public BoxScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
         super(syncId, playerInventory, inventory);
-        this.pos = BlockPos.ORIGIN;
+        this.propertyDelegate = propertyDelegate;
+        this.addProperties(propertyDelegate);
     }
 
-    @Override
-    public BlockPos getPos() {
-        return pos;
+    public int getSyncedNumber(){
+        return propertyDelegate.get(0);
     }
+
+
 
     @Override
     public ScreenHandlerType<?> getType() {
