@@ -144,17 +144,6 @@ public class XpItemInserterEntity extends BlockEntity implements ImplementedInve
     }
 
     @Override
-    public boolean canInsert(int slot, ItemStack stack, Direction side) {
-
-        for (int i = 0; i < XpsAdditions.ITEMS_TO_XP.length; i++) {
-            if (stack.getItem().equals(XpsAdditions.ITEMS_TO_XP[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
     public Text getDisplayName() {
         return Text.translatable("block.xps_additions.xp_item_inserter");
     }
