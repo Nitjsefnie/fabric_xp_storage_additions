@@ -9,7 +9,6 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 
 public class PositionedScreen extends HandledScreen<ScreenHandler> {
@@ -22,7 +21,7 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
     }
 
     private static Text getPositionText(ScreenHandler handler) {
-        return new TranslatableText("block.xps_additions.xp_item_inserter");
+        return Text.translatable("block.xps_additions.xp_item_inserter");
     }
 
     @Override
@@ -36,8 +35,8 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         drawMouseoverTooltip(matrices, mouseX, mouseY);
 
         //Draw Storage Title
-        int xStorage = (width - textRenderer.getWidth(new TranslatableText("block.xps.block_xp_obelisk"))) / 2;
-        textRenderer.draw(matrices, new TranslatableText("block.xps.block_xp_obelisk"), xStorage, y - 15, 4210752);
+        int xStorage = (width - textRenderer.getWidth(Text.translatable("block.xps.block_xp_obelisk"))) / 2;
+        textRenderer.draw(matrices, Text.translatable("block.xps.block_xp_obelisk"), xStorage, y - 15, 4210752);
 
         //Draw Xp bar Background
 
