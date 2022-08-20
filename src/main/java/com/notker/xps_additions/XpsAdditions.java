@@ -1,13 +1,20 @@
 package com.notker.xps_additions;
 
 import com.notker.xp_storage.XpStorage;
+import com.notker.xp_storage.regestry.ModFluids;
+import com.notker.xp_storage.regestry.ModItems;
 import com.notker.xps_additions.effects.GiggleStatusEffect;
 import com.notker.xps_additions.regestry.AdditionBlocks;
 import com.notker.xps_additions.regestry.AdditionItems;
+import com.notker.xps_additions.screen.BoxScreenHandler;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -52,23 +59,24 @@ public class XpsAdditions implements ModInitializer {
             entry(Blocks.STRIPPED_CRIMSON_HYPHAE, Blocks.CRIMSON_HYPHAE)
     );
 
-
+    public static final int ITEM_SLOTS = 9;
+    public static final Item[] ITEMS_TO_XP = {ModItems.XP_BERRIES, Items.EXPERIENCE_BOTTLE, ModFluids.XP_BUCKET};
 
     public static Identifier createModIdIdentifier (String path) {
         return new Identifier(MOD_ID, path);
     }
 
 
+    public static final ScreenHandlerType<BoxScreenHandler> BOX_SCREEN_HANDLER = new ExtendedScreenHandlerType<>(BoxScreenHandler::new);
 
     public static final StatusEffect GIGGLE = new GiggleStatusEffect();
 
 
-
     @Override
     public void onInitialize() {
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(MOD_ID, "giggle"), GIGGLE);
-
         AdditionBlocks.registerBlocks();
         AdditionItems.registerItems();
+        Registry.register(Registry.STATUS_EFFECT, new Identifier(MOD_ID, "giggle"), GIGGLE);
+        Registry.register(Registry.SCREEN_HANDLER, new Identifier(MOD_ID, "xp_item_inserter"), BOX_SCREEN_HANDLER);
     }
 }

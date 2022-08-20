@@ -9,7 +9,6 @@ import net.minecraft.item.ItemUsageContext;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -39,9 +38,7 @@ public class StaffOfRebark extends Item {
             world.playSound(playerEntity, blockPos, SoundEvents.ITEM_DYE_USE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
             if (playerEntity != null && !playerEntity.isCreative()) {
-                playerEntity.getStackInHand(context.getHand()).damage(1, playerEntity, p -> {
-                    p.sendToolBreakStatus(context.getHand());
-                });
+                playerEntity.getStackInHand(context.getHand()).damage(1, playerEntity, p -> p.sendToolBreakStatus(context.getHand()));
             }
 
             if (!world.isClient()) {

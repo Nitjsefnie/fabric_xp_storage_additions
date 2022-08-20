@@ -3,6 +3,9 @@ package com.notker.xps_additions.regestry;
 import com.notker.xps_additions.XpsAdditions;
 import com.notker.xps_additions.blocks.*;
 
+import com.notker.xps_additions.entity.XpItemInserterEntity;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.registry.Registry;
 
 public class AdditionBlocks {
@@ -13,7 +16,12 @@ public class AdditionBlocks {
     public static final SoulCopperBars SOUL_COPPER_BARS = new SoulCopperBars();
     public static final CutSoulCopper CUT_SOUL_COPPER = new CutSoulCopper();
     public static final CutSoulCopperSlab CUT_SOUL_COPPER_SLAB = new CutSoulCopperSlab();
-    public final static CutSoulCopperStairs CUT_SOUL_COPPER_STAIRS = new CutSoulCopperStairs();
+    public static final CutSoulCopperStairs CUT_SOUL_COPPER_STAIRS = new CutSoulCopperStairs();
+    public static final XpItemInserter XP_ITEM_INSERTER = new XpItemInserter();
+
+    public static final BlockEntityType<XpItemInserterEntity> XP_ITEM_INSERTER_ENTITY = FabricBlockEntityTypeBuilder.create(XpItemInserterEntity::new, XP_ITEM_INSERTER).build(null);
+
+
 
 
 
@@ -25,5 +33,8 @@ public class AdditionBlocks {
         Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("cut_soul_copper"), CUT_SOUL_COPPER);
         Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("cut_soul_copper_slab"), CUT_SOUL_COPPER_SLAB);
         Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("cut_soul_copper_stairs"), CUT_SOUL_COPPER_STAIRS);
+        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("xp_item_inserter"), XP_ITEM_INSERTER);
+
+        Registry.register(Registry.BLOCK_ENTITY_TYPE, XpsAdditions.createModIdIdentifier("entity_xp_obelisk"), XP_ITEM_INSERTER_ENTITY);
     }
 }

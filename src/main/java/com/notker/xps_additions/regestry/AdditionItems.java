@@ -40,6 +40,7 @@ public class AdditionItems {
     public static final BlockItem CUT_SOUL_COPPER_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER);
     public static final BlockItem CUT_SOUL_COPPER_SLAB_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER_SLAB);
     public static final BlockItem CUT_SOUL_COPPER_STAIRS_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER_STAIRS);
+    public static final BlockItem XP_ITEM_INSERTER_ITEM = createBlockItemWithGroup(AdditionBlocks.XP_ITEM_INSERTER);
 
     public static void registerItems() {
         //Items
@@ -57,6 +58,7 @@ public class AdditionItems {
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper"), CUT_SOUL_COPPER_ITEM);
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper_slab"), CUT_SOUL_COPPER_SLAB_ITEM);
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper_stairs"), CUT_SOUL_COPPER_STAIRS_ITEM);
+        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("xp_item_inserter"), XP_ITEM_INSERTER_ITEM);
 
         //Fuel
         FuelRegistry.INSTANCE.add(RAW_ESSENCE, XpsAdditions.RAW_ESSENCE_FUEL_DURATION);
