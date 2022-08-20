@@ -60,7 +60,6 @@ public class XpsAdditions implements ModInitializer {
     );
 
     public static final int ITEM_SLOTS = 9;
-    public static final Item[] ITEMS_TO_XP = {ModItems.XP_BERRIES, Items.EXPERIENCE_BOTTLE, ModFluids.XP_BUCKET};
 
     public static Identifier createModIdIdentifier (String path) {
         return new Identifier(MOD_ID, path);
