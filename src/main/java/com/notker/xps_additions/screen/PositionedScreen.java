@@ -16,21 +16,16 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
     BoxScreenHandler screenHandler;
 
     public PositionedScreen(ScreenHandler handler, PlayerInventory inventory, Text title) {
-        super(handler, inventory, getPositionText(handler));
+        super(handler, inventory, title);
         screenHandler = (BoxScreenHandler) handler;
-    }
-
-    private static Text getPositionText(ScreenHandler handler) {
-        return Text.translatable("block.xps_additions.xp_item_inserter");
     }
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         int xp = screenHandler.getSyncedNumber();
         int y = ((height - backgroundHeight) / 2) + 6;
-        int x = (width - textRenderer.getWidth(Integer.toString(xp))) / 2;
 
-        renderBackground(matrices);
+        //renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
         drawMouseoverTooltip(matrices, mouseX, mouseY);
 
@@ -84,7 +79,7 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         // Center the title
         backgroundHeight = 200;
         this.titleX = (backgroundWidth - textRenderer.getWidth(title)) / 2;
-
+        this.titleY = 4;
 
 
     }

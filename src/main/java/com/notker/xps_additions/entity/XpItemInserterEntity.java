@@ -97,16 +97,14 @@ public class XpItemInserterEntity extends BlockEntity implements ImplementedInve
     }
 
     public static void tick(World world, BlockPos blockPos, BlockState blockState, XpItemInserterEntity entity) {
-        boolean powerd = world.isReceivingRedstonePower(blockPos);
-        if (!powerd) {
 
-            Direction facing = blockState.get(Properties.HORIZONTAL_FACING);
-            //Direction facing = entity.getCachedState().get(Properties.HORIZONTAL_FACING);
-            BlockPos pos = blockPos.offset(facing, 1);
-            Optional<StorageBlockEntity> storage = world.getBlockEntity(pos, ModBlocks.STORAGE_BLOCK_ENTITY);
+        Direction facing = blockState.get(Properties.HORIZONTAL_FACING);
+        BlockPos pos = blockPos.offset(facing, 1);
+        Optional<StorageBlockEntity> storage = world.getBlockEntity(pos, ModBlocks.STORAGE_BLOCK_ENTITY);
 
-            if (storage.isPresent()) {
-                entity.syncedInt = storage.get().getContainerExperience();
+        if (storage.isPresent()) {
+            entity.syncedInt = storage.get().getContainerExperience();
+            if (!world.isReceivingRedstonePower(blockPos)) {
                 int mbToInsert = 0;
                 for (int i = 0; i < XpsAdditions.ITEM_SLOTS; i++) {
                     ItemStack itemStackToInsert = entity.getItems().get(i);
@@ -146,6 +144,9 @@ public class XpItemInserterEntity extends BlockEntity implements ImplementedInve
                     transaction.commit();
                 }
             }
+
+        } else {
+            entity.syncedInt = 0;
         }
     }
 
