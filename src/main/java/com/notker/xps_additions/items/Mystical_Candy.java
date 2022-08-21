@@ -16,7 +16,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
@@ -55,16 +54,16 @@ public class Mystical_Candy extends Item {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         super.appendTooltip(stack, world, tooltip, tooltipContext);
 
-        tooltip.add(new TranslatableText("item.xps.more.info.tooltip"));
+        tooltip.add(Text.translatable("item.xps.more.info.tooltip"));
         if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow().getHandle(), XpStorage.shiftKey)) {
-            tooltip.remove(new TranslatableText("item.xps.more.info.tooltip"));
+            tooltip.remove(Text.translatable("item.xps.more.info.tooltip"));
 
-            tooltip.add(new TranslatableText("item.tooltip.mystical_candy", XpsAdditions.XP_PER_MYSTICAL_CANDY).formatted(Formatting.WHITE));
-            tooltip.add(new TranslatableText("item.tooltip.mystical_candy_effect_Giggle",
+            tooltip.add(Text.translatable("item.tooltip.mystical_candy", XpsAdditions.XP_PER_MYSTICAL_CANDY).formatted(Formatting.WHITE));
+            tooltip.add(Text.translatable("item.tooltip.mystical_candy_effect_Giggle",
                     TooltipHelper.potionTooltipHelper(XpsAdditions.GIGGLE_EFFECT_DURATION),
                     TooltipHelper.chanceToString(XpsAdditions.GIGGLE_EFFECT_CHANCE)
             ).formatted(Formatting.RED));
-            tooltip.add(new TranslatableText("item.tooltip.mystical_candy_effect_Haste",
+            tooltip.add(Text.translatable("item.tooltip.mystical_candy_effect_Haste",
                     TooltipHelper.potionTooltipHelper(XpsAdditions.HASTE_EFFECT_AMPLIFIER, XpsAdditions.HASTE_EFFECT_DURATION),
                     TooltipHelper.chanceToString(XpsAdditions.HASTE_EFFECT_CHANCE)
             ).formatted(Formatting.BLUE));
