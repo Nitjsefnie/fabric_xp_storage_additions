@@ -41,6 +41,7 @@ public class AdditionItems {
     public static final BlockItem CUT_SOUL_COPPER_SLAB_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER_SLAB);
     public static final BlockItem CUT_SOUL_COPPER_STAIRS_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER_STAIRS);
     public static final BlockItem XP_ITEM_INSERTER_ITEM = createBlockItemWithGroup(AdditionBlocks.XP_ITEM_INSERTER);
+    public static final BlockItem RAW_ESSENCE_BLOCK_ITEM = createBlockItemWithGroup(AdditionBlocks.RAW_ESSENCE_BLOCK);
 
     public static void registerItems() {
         //Items
@@ -59,9 +60,11 @@ public class AdditionItems {
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper_slab"), CUT_SOUL_COPPER_SLAB_ITEM);
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper_stairs"), CUT_SOUL_COPPER_STAIRS_ITEM);
         Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("xp_item_inserter"), XP_ITEM_INSERTER_ITEM);
+        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("raw_essence_block"), RAW_ESSENCE_BLOCK_ITEM);
 
         //Fuel
         FuelRegistry.INSTANCE.add(RAW_ESSENCE, XpsAdditions.RAW_ESSENCE_FUEL_DURATION);
         FuelRegistry.INSTANCE.add(RAW_ESSENCE_SHARD, XpsAdditions.RAW_ESSENCE_SHARD_FUEL_DURATION);
+        FuelRegistry.INSTANCE.add(RAW_ESSENCE_SHARD, XpsAdditions.RAW_ESSENCE_BLOCK_FUEL_DURATION);
     }
 }

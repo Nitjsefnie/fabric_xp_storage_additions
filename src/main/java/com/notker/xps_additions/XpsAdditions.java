@@ -38,6 +38,7 @@ public class XpsAdditions implements ModInitializer {
 
     public static final int RAW_ESSENCE_SHARD_FUEL_DURATION = 16 * 200; //Items * smelt time
     public static final int RAW_ESSENCE_FUEL_DURATION = RAW_ESSENCE_SHARD_FUEL_DURATION * 10; //Items * smelt time
+    public static final int RAW_ESSENCE_BLOCK_FUEL_DURATION = RAW_ESSENCE_FUEL_DURATION * 10;
 
 
     public static final Map<Block, Block> BLOCKS_TO_REBARK = Map.ofEntries(
