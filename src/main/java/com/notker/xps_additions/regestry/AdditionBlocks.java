@@ -22,7 +22,7 @@ public class AdditionBlocks {
     public static final CutSoulCopperSlab CUT_SOUL_COPPER_SLAB = new CutSoulCopperSlab();
     public static final CutSoulCopperStairs CUT_SOUL_COPPER_STAIRS = new CutSoulCopperStairs();
     public static final XpItemInserter XP_ITEM_INSERTER = new XpItemInserter();
-    public static final Block RAW_ESSENCE_BLOCK = new Block(FabricBlockSettings.of(Material.AMETHYST).sounds(BlockSoundGroup.AMETHYST_BLOCK).strength( 56F, 5F).requiresTool().velocityMultiplier(2F));
+    public static final Block RAW_ESSENCE_BLOCK = new Block(FabricBlockSettings.of(Material.AMETHYST).sounds(BlockSoundGroup.AMETHYST_BLOCK).strength( 5F, 6F).requiresTool());
 
     public static final BlockEntityType<XpItemInserterEntity> XP_ITEM_INSERTER_ENTITY = FabricBlockEntityTypeBuilder.create(XpItemInserterEntity::new, XP_ITEM_INSERTER).build(null);
 
