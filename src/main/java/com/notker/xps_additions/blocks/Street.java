@@ -14,6 +14,7 @@ import net.minecraft.world.WorldAccess;
 
 import java.util.Objects;
 
+@SuppressWarnings("deprecation")
 public class Street extends HorizontalConnectingBlock {
 
     public Street(Settings settings) {
@@ -27,7 +28,7 @@ public class Street extends HorizontalConnectingBlock {
     }
 
 
-    public boolean canConnect(BlockState state, boolean neighborIsFullSquare, Direction dir) {
+    public boolean canConnect(BlockState state) {
         Block block = state.getBlock();
         return  block instanceof Street;
     }
@@ -36,19 +37,15 @@ public class Street extends HorizontalConnectingBlock {
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockView blockView = ctx.getWorld();
         BlockPos blockPos = ctx.getBlockPos();
-        BlockPos blockPos2 = blockPos.north();
-        BlockPos blockPos3 = blockPos.east();
-        BlockPos blockPos4 = blockPos.south();
-        BlockPos blockPos5 = blockPos.west();
-        BlockState blockState = blockView.getBlockState(blockPos2);
-        BlockState blockState2 = blockView.getBlockState(blockPos3);
-        BlockState blockState3 = blockView.getBlockState(blockPos4);
-        BlockState blockState4 = blockView.getBlockState(blockPos5);
+        BlockState blockState_north = blockView.getBlockState(blockPos.north());
+        BlockState blockState_east = blockView.getBlockState(blockPos.east());
+        BlockState blockState_south = blockView.getBlockState(blockPos.south());
+        BlockState blockState_west = blockView.getBlockState(blockPos.west());
         return Objects.requireNonNull(super.getPlacementState(ctx))
-                .with(NORTH, this.canConnect(blockState, blockState.isSideSolidFullSquare(blockView, blockPos2, Direction.SOUTH), Direction.SOUTH))
-                .with(EAST, this.canConnect(blockState2, blockState2.isSideSolidFullSquare(blockView, blockPos3, Direction.WEST), Direction.WEST))
-                .with(SOUTH, this.canConnect(blockState3, blockState3.isSideSolidFullSquare(blockView, blockPos4, Direction.NORTH), Direction.NORTH))
-                .with(WEST, this.canConnect(blockState4, blockState4.isSideSolidFullSquare(blockView, blockPos5, Direction.EAST), Direction.EAST))
+                .with(NORTH, this.canConnect(blockState_north))
+                .with(EAST, this.canConnect(blockState_east))
+                .with(SOUTH, this.canConnect(blockState_south))
+                .with(WEST, this.canConnect(blockState_west))
                 .with(WATERLOGGED, false);
     }
 
@@ -56,7 +53,7 @@ public class Street extends HorizontalConnectingBlock {
         if (state.get(WATERLOGGED)) {
             world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-        return direction.getAxis().getType() == Direction.Type.HORIZONTAL ? state.with(FACING_PROPERTIES.get(direction), this.canConnect(neighborState, neighborState.isSideSolidFullSquare(world, neighborPos, direction.getOpposite()), direction.getOpposite())) : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+        return direction.getAxis().getType() == Direction.Type.HORIZONTAL ? state.with(FACING_PROPERTIES.get(direction), this.canConnect(neighborState)) : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
 
