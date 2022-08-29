@@ -1,8 +1,11 @@
 package com.notker.xps_additions.blocks;
 
+import com.notker.xps_additions.XpsAdditions;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalConnectingBlock;
+import net.minecraft.block.Material;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
@@ -17,8 +20,12 @@ import java.util.Objects;
 @SuppressWarnings("deprecation")
 public class Street extends HorizontalConnectingBlock {
 
-    public Street(Settings settings) {
-        super(8F, 8F, 15F, 15F, 14F, settings);
+    public Street() {
+        super(8F, 8F, 15F, 15F, 14F, FabricBlockSettings
+                .of(Material.GOURD)
+                .strength(1F, 6F)
+                .nonOpaque()
+                .velocityMultiplier(XpsAdditions.RUNNING_SPEED));
         this.setDefaultState(getDefaultState()
                 .with(NORTH, false)
                 .with(EAST, false)
@@ -61,4 +68,6 @@ public class Street extends HorizontalConnectingBlock {
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
         stateManager.add(Properties.NORTH, EAST, WEST, SOUTH, WATERLOGGED);
     }
+
+
 }
