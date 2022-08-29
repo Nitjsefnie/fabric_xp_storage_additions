@@ -1,8 +1,6 @@
 package com.notker.xps_additions;
 
 import com.notker.xp_storage.XpStorage;
-import com.notker.xp_storage.regestry.ModFluids;
-import com.notker.xp_storage.regestry.ModItems;
 import com.notker.xps_additions.effects.GiggleStatusEffect;
 import com.notker.xps_additions.regestry.AdditionBlocks;
 import com.notker.xps_additions.regestry.AdditionItems;
@@ -12,8 +10,6 @@ import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -35,10 +31,9 @@ public class XpsAdditions implements ModInitializer {
     public static final int GIGGLE_EFFECT_DURATION = 200;
     public static final float GIGGLE_EFFECT_CHANCE = 0.25f;
 
-
-    public static final int RAW_ESSENCE_SHARD_FUEL_DURATION = 16 * 200; //Items * smelt time
-    public static final int RAW_ESSENCE_FUEL_DURATION = RAW_ESSENCE_SHARD_FUEL_DURATION * 10; //Items * smelt time
-    public static final int RAW_ESSENCE_BLOCK_FUEL_DURATION = RAW_ESSENCE_FUEL_DURATION * 10;
+    public static final int RAW_ESSENCE_BLOCK_FUEL_DURATION = 160 * 200; //160 Items * smelt time
+    public static final int RAW_ESSENCE_FUEL_DURATION = RAW_ESSENCE_BLOCK_FUEL_DURATION / 5; //32 Items
+    public static final int RAW_ESSENCE_SHARD_FUEL_DURATION = RAW_ESSENCE_FUEL_DURATION / 4; // 8 Items
 
 
     public static final Map<Block, Block> BLOCKS_TO_REBARK = Map.ofEntries(
