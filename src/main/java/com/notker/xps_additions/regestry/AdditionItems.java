@@ -69,6 +69,6 @@ public class AdditionItems {
         //Fuel
         FuelRegistry.INSTANCE.add(RAW_ESSENCE, XpsAdditions.RAW_ESSENCE_FUEL_DURATION);
         FuelRegistry.INSTANCE.add(RAW_ESSENCE_SHARD, XpsAdditions.RAW_ESSENCE_SHARD_FUEL_DURATION);
-        FuelRegistry.INSTANCE.add(RAW_ESSENCE_SHARD, XpsAdditions.RAW_ESSENCE_BLOCK_FUEL_DURATION);
+        FuelRegistry.INSTANCE.add(RAW_ESSENCE_BLOCK_ITEM, XpsAdditions.RAW_ESSENCE_BLOCK_FUEL_DURATION);
     }
 }
