@@ -19,6 +19,10 @@ public class AdditionItems {
         return new BlockItem(block, new Item.Settings().group(XpStorage.ITEM_GROUP));
     }
 
+    private static BlockItem createBlockItemWithGroup(Block block, Rarity rarity) {
+        return new BlockItem(block, new Item.Settings().group(XpStorage.ITEM_GROUP).rarity(rarity));
+    }
+
     private static Item.Settings newSettings() {
         return new Item.Settings().group(XpStorage.ITEM_GROUP);
     }
@@ -41,7 +45,7 @@ public class AdditionItems {
     public static final BlockItem CUT_SOUL_COPPER_SLAB_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER_SLAB);
     public static final BlockItem CUT_SOUL_COPPER_STAIRS_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER_STAIRS);
     public static final BlockItem XP_ITEM_INSERTER_ITEM = createBlockItemWithGroup(AdditionBlocks.XP_ITEM_INSERTER);
-    public static final BlockItem RAW_ESSENCE_BLOCK_ITEM = createBlockItemWithGroup(AdditionBlocks.RAW_ESSENCE_BLOCK);
+    public static final BlockItem RAW_ESSENCE_BLOCK_ITEM = createBlockItemWithGroup(AdditionBlocks.RAW_ESSENCE_BLOCK, Rarity.RARE);
 
     public static void registerItems() {
         //Items
