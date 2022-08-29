@@ -3,11 +3,11 @@ package com.notker.xps_additions.items;
 import com.notker.xp_storage.XpStorage;
 import com.notker.xps_additions.XpsAdditions;
 import com.notker.xps_additions.TooltipHelper;
-import net.minecraft.client.MinecraftClient;
+import com.notker.xps_additions.effects.GiggleStatusEffect;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.client.util.InputUtil;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,6 +21,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Mystical_Candy extends Item {
     public Mystical_Candy() { super(new Item.Settings()
@@ -59,12 +60,12 @@ public class Mystical_Candy extends Item {
                 Text.translatable("effect.xps_additions.giggle"),
                 TooltipHelper.potionTooltipHelper(XpsAdditions.GIGGLE_EFFECT_DURATION),
                 TooltipHelper.chanceToString(XpsAdditions.GIGGLE_EFFECT_CHANCE)
-        ).formatted(Formatting.RED));
+        ).formatted(new GiggleStatusEffect().getCategory().getFormatting()));
         tooltip.add(Text.translatable("item.tooltip.mystical_candy_effect",
                 Text.translatable("effect.minecraft.haste"),
                 TooltipHelper.potionTooltipHelper(XpsAdditions.HASTE_EFFECT_AMPLIFIER, XpsAdditions.HASTE_EFFECT_DURATION),
                 TooltipHelper.chanceToString(XpsAdditions.HASTE_EFFECT_CHANCE)
-        ).formatted(Formatting.BLUE));
+        ).formatted(StatusEffects.HASTE.getCategory().getFormatting()));
         tooltip.add(ScreenTexts.EMPTY);
         tooltip.add(Text.translatable("item.tooltip.mystical_candy", XpsAdditions.XP_PER_MYSTICAL_CANDY).formatted(Formatting.WHITE));
     }
