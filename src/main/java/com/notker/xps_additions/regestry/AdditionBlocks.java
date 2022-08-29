@@ -22,7 +22,9 @@ public class AdditionBlocks {
     public static final CutSoulCopperSlab CUT_SOUL_COPPER_SLAB = new CutSoulCopperSlab();
     public static final CutSoulCopperStairs CUT_SOUL_COPPER_STAIRS = new CutSoulCopperStairs();
     public static final XpItemInserter XP_ITEM_INSERTER = new XpItemInserter();
-    public static final Block RAW_ESSENCE_BLOCK = new Block(FabricBlockSettings.of(Material.AMETHYST).sounds(BlockSoundGroup.AMETHYST_BLOCK).strength( 5F, 6F).requiresTool());
+    public static final Block RAW_ESSENCE_BLOCK = new Block(FabricBlockSettings.of(Material.AMETHYST).sounds(BlockSoundGroup.CALCITE).strength( 5F, 6F).requiresTool());
+    public static final Street STREET = new Street(FabricBlockSettings.of(Material.GOURD).nonOpaque().velocityMultiplier(1.20F));
+
 
     public static final BlockEntityType<XpItemInserterEntity> XP_ITEM_INSERTER_ENTITY = FabricBlockEntityTypeBuilder.create(XpItemInserterEntity::new, XP_ITEM_INSERTER).build(null);
 
@@ -40,6 +42,8 @@ public class AdditionBlocks {
         Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("cut_soul_copper_stairs"), CUT_SOUL_COPPER_STAIRS);
         Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("xp_item_inserter"), XP_ITEM_INSERTER);
         Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("raw_essence_block"), RAW_ESSENCE_BLOCK);
+        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("street"), STREET);
+
 
         Registry.register(Registry.BLOCK_ENTITY_TYPE, XpsAdditions.createModIdIdentifier("entity_xp_obelisk"), XP_ITEM_INSERTER_ENTITY);
     }
