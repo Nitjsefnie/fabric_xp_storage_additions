@@ -3,7 +3,6 @@ package com.notker.xps_additions.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import com.notker.xp_storage.XpFunctions;
-import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
