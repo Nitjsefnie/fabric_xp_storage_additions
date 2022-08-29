@@ -36,20 +36,20 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         //Draw Xp bar Background
 
         //Vanilla Xp Bar
-        RenderSystem.setShaderTexture(0, DrawableHelper.GUI_ICONS_TEXTURE);
-        int v = 64;
-        int barWidth = 182;
-        int barHeight = 5;
+        //RenderSystem.setShaderTexture(0, DrawableHelper.GUI_ICONS_TEXTURE);
+        //int v = 64;
+        //int barWidth = 182;
+        //int barHeight = 5;
 
         //Custom xp Bar
-        //RenderSystem.setShaderTexture(0, TEXTURE);
-        //int v = 236;
-        //int barWidth = 162;
-        //int barHeight = 5;
+        RenderSystem.setShaderTexture(0, TEXTURE);
+        int v = 228; //236
+        int barWidth = 164; // 162
+        int barHeight = 7; //5
 
         int[] color = {0xec00b8, 0x99ff33}; //Purple - Green
 
-        drawTexture(matrices,  (width - barWidth) / 2  , y + 5, 0, v, barWidth, barHeight);
+        drawTexture(matrices,  (width - barWidth) / 2  , y + (barHeight - 1), 0, v, barWidth, barHeight);
 
         int level = XpFunctions.getLevelFromExp(xp);
         int excess_xp = xp - XpFunctions.get_total_xp_value_from_level(level);
@@ -59,7 +59,7 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         //Draw Xp bar Overlay
         if (container_progress > 0) {
            int scaledWidth = (int)(container_progress * (float)barWidth + 1f);
-            drawTexture(matrices, (width - barWidth) / 2 , y + 5, 0, v + barHeight, scaledWidth, barHeight);
+            drawTexture(matrices, (width - barWidth) / 2 , y + (barHeight - 1), 0, v + barHeight, scaledWidth, barHeight);
         }
 
         //Draw Level String
