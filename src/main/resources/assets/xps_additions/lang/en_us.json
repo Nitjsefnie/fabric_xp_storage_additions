@@ -8,8 +8,7 @@
   "item.xps_additions.essence_crystal": "Essence Crystal",
 
   "item.tooltip.mystical_candy": "Drops %sXP when eaten",
-  "item.tooltip.mystical_candy_effect_Giggle": "Hiccup %s chance %s",
-  "item.tooltip.mystical_candy_effect_Haste": "Haste %s chance %s",
+  "item.tooltip.mystical_candy_effect": "%s %s chance: %s",
   "item.tooltip.street": "Runningspeed %s",
 
   "block.xps_additions.soul_copper_door": "Soulcopper Door",
