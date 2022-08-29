@@ -7,7 +7,6 @@ import com.notker.xps_additions.effects.GiggleStatusEffect;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,7 +20,6 @@ import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 import java.util.List;
-import java.util.Objects;
 
 public class Mystical_Candy extends Item {
     public Mystical_Candy() { super(new Item.Settings()
