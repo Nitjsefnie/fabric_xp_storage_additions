@@ -4,7 +4,7 @@ import com.notker.xp_storage.XpStorage;
 import com.notker.xps_additions.XpsAdditions;
 import com.notker.xps_additions.items.Mystical_Candy;
 import com.notker.xps_additions.items.StaffOfRebark;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import com.notker.xps_additions.items.Street_Item;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -16,12 +16,14 @@ public class AdditionItems {
 
 
     private static BlockItem createBlockItemWithGroup(Block block) {
-        return new BlockItem(block, new Item.Settings().group(XpStorage.ITEM_GROUP));
+        return new BlockItem(block, newSettings());
     }
 
     private static BlockItem createBlockItemWithGroup(Block block, Rarity rarity) {
-        return new BlockItem(block, new Item.Settings().group(XpStorage.ITEM_GROUP).rarity(rarity));
+        return new BlockItem(block, newSettings().rarity(rarity));
     }
+
+
 
     private static Item.Settings newSettings() {
         return new Item.Settings().group(XpStorage.ITEM_GROUP);
@@ -46,7 +48,7 @@ public class AdditionItems {
     public static final BlockItem CUT_SOUL_COPPER_STAIRS_ITEM = createBlockItemWithGroup(AdditionBlocks.CUT_SOUL_COPPER_STAIRS);
     public static final BlockItem XP_ITEM_INSERTER_ITEM = createBlockItemWithGroup(AdditionBlocks.XP_ITEM_INSERTER);
     public static final BlockItem RAW_ESSENCE_BLOCK_ITEM = createBlockItemWithGroup(AdditionBlocks.RAW_ESSENCE_BLOCK, Rarity.RARE);
-    public static final BlockItem STREET_ITEM = createBlockItemWithGroup(AdditionBlocks.STREET);
+    public static final BlockItem STREET_ITEM = new Street_Item(AdditionBlocks.STREET, newSettings());
 
 
     public static void registerItems() {

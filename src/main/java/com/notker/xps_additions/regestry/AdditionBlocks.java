@@ -23,7 +23,7 @@ public class AdditionBlocks {
     public static final CutSoulCopperStairs CUT_SOUL_COPPER_STAIRS = new CutSoulCopperStairs();
     public static final XpItemInserter XP_ITEM_INSERTER = new XpItemInserter();
     public static final Block RAW_ESSENCE_BLOCK = new Block(FabricBlockSettings.of(Material.AMETHYST).sounds(BlockSoundGroup.CALCITE).strength( 5F, 6F).requiresTool());
-    public static final Street STREET = new Street(FabricBlockSettings.of(Material.GOURD).nonOpaque().velocityMultiplier(1.20F));
+    public static final Street STREET = new Street();
 
 
     public static final BlockEntityType<XpItemInserterEntity> XP_ITEM_INSERTER_ENTITY = FabricBlockEntityTypeBuilder.create(XpItemInserterEntity::new, XP_ITEM_INSERTER).build(null);
