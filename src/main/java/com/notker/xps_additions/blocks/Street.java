@@ -21,10 +21,9 @@ import java.util.Objects;
 public class Street extends HorizontalConnectingBlock {
 
     public Street() {
-        super(8F, 8F, 15F, 15F, 14F, FabricBlockSettings
+        super(8F, 8F, 16F, 16F, 14F, FabricBlockSettings
                 .of(Material.GOURD)
                 .strength(1F, 6F)
-                .nonOpaque()
                 .velocityMultiplier(XpsAdditions.RUNNING_SPEED));
         this.setDefaultState(getDefaultState()
                 .with(NORTH, false)
