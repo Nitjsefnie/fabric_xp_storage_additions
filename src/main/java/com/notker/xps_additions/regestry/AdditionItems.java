@@ -35,7 +35,7 @@ public class AdditionItems {
     public static final Item MYSTICAL_CANDY = new Mystical_Candy();
     public static final Item RAW_ESSENCE = new Item(newSettings().rarity(Rarity.RARE));
     public static final Item RAW_ESSENCE_SHARD = new Item(newSettings().rarity(Rarity.RARE));
-    public static final Item STAFF_OF_REBARK = new StaffOfRebark(newSettings().rarity(Rarity.EPIC).maxDamage(1561));
+    public static final Item STAFF_OF_REBARK = new StaffOfRebark(newSettings().rarity(Rarity.EPIC).maxDamage(2880));
     public static final Item ESSENCE_CRYSTAL = new Item(newSettings().rarity(Rarity.EPIC));
 
     //Block Items

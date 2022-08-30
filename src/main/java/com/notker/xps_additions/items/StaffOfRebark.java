@@ -42,7 +42,7 @@ public class StaffOfRebark extends Item {
             world.playSound(playerEntity, blockPos, SoundEvents.ITEM_DYE_USE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
             if (playerEntity != null && !playerEntity.isCreative()) {
-                playerEntity.getStackInHand(context.getHand()).damage(1, playerEntity, p -> p.sendToolBreakStatus(context.getHand()));
+                playerEntity.getStackInHand(context.getHand()).damage(5, playerEntity, p -> p.sendToolBreakStatus(context.getHand()));
             }
 
             if (!world.isClient()) {
