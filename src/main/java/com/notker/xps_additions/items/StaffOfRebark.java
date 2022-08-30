@@ -1,6 +1,5 @@
 package com.notker.xps_additions.items;
 
-import com.notker.xps_additions.XpsAdditions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;

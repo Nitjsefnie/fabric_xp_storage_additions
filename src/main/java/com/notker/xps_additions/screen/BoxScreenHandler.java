@@ -24,7 +24,6 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.Generic3x3ContainerScreenHandler;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandlerType;
-import net.minecraft.util.math.BlockPos;
 
 
 public class BoxScreenHandler extends Generic3x3ContainerScreenHandler {
