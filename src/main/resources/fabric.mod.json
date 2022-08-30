@@ -25,7 +25,7 @@
       "com.notker.xps_additions.XpsAdditionsClient"
     ]
   },
-  "mixins": [],
+  "mixins": ["xp_obelisk_additions_mixin.json"],
 
   "depends": {
     "fabricloader": ">=0.14.6",

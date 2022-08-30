@@ -2,10 +2,13 @@ package com.notker.xps_additions;
 
 import com.notker.xp_storage.XpStorage;
 import com.notker.xps_additions.effects.GiggleStatusEffect;
+import com.notker.xps_additions.items.StaffOfRebark;
+import com.notker.xps_additions.mixin.AxeItemAccessor;
 import com.notker.xps_additions.regestry.AdditionBlocks;
 import com.notker.xps_additions.regestry.AdditionItems;
 import com.notker.xps_additions.screen.BoxScreenHandler;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -14,9 +17,12 @@ import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.AbstractMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static java.util.Map.entry;
+import static org.apache.logging.log4j.ThreadContext.peek;
 
 public class XpsAdditions implements ModInitializer {
 
@@ -37,26 +43,6 @@ public class XpsAdditions implements ModInitializer {
 
     public static final float RUNNING_SPEED = 1.20F;
 
-
-    public static final Map<Block, Block> BLOCKS_TO_REBARK = Map.ofEntries(
-            entry(Blocks.STRIPPED_OAK_WOOD, Blocks.OAK_WOOD),
-            entry(Blocks.STRIPPED_OAK_LOG, Blocks.OAK_LOG),
-            entry(Blocks.STRIPPED_DARK_OAK_WOOD, Blocks.DARK_OAK_WOOD),
-            entry(Blocks.STRIPPED_DARK_OAK_LOG, Blocks.DARK_OAK_LOG),
-            entry(Blocks.STRIPPED_ACACIA_WOOD, Blocks.ACACIA_WOOD),
-            entry(Blocks.STRIPPED_ACACIA_LOG, Blocks.ACACIA_LOG),
-            entry(Blocks.STRIPPED_BIRCH_WOOD, Blocks.BIRCH_WOOD),
-            entry(Blocks.STRIPPED_BIRCH_LOG, Blocks.BIRCH_LOG),
-            entry(Blocks.STRIPPED_JUNGLE_WOOD, Blocks.JUNGLE_WOOD),
-            entry(Blocks.STRIPPED_JUNGLE_LOG, Blocks.JUNGLE_LOG),
-            entry(Blocks.STRIPPED_SPRUCE_WOOD, Blocks.SPRUCE_WOOD),
-            entry(Blocks.STRIPPED_SPRUCE_LOG, Blocks.SPRUCE_LOG),
-            entry(Blocks.STRIPPED_WARPED_STEM, Blocks.WARPED_STEM),
-            entry(Blocks.STRIPPED_WARPED_HYPHAE, Blocks.WARPED_HYPHAE),
-            entry(Blocks.STRIPPED_CRIMSON_STEM, Blocks.CRIMSON_STEM),
-            entry(Blocks.STRIPPED_CRIMSON_HYPHAE, Blocks.CRIMSON_HYPHAE)
-    );
-
     public static final int ITEM_SLOTS = 9;
 
     public static Identifier createModIdIdentifier (String path) {
@@ -75,5 +61,18 @@ public class XpsAdditions implements ModInitializer {
         AdditionItems.registerItems();
         Registry.register(Registry.STATUS_EFFECT, new Identifier(MOD_ID, "giggle"), GIGGLE);
         Registry.register(Registry.SCREEN_HANDLER, new Identifier(MOD_ID, "xp_item_inserter"), BOX_SCREEN_HANDLER);
+
+
+        ServerWorldEvents.LOAD.register((server, level) -> {
+            if (StaffOfRebark.STRIPPED_BLOCKS == null) {
+                System.out.println("Null on Server");
+                StaffOfRebark.STRIPPED_BLOCKS = AxeItemAccessor.getStrip().entrySet()
+                        .stream()
+                        .map((e) -> new AbstractMap.SimpleImmutableEntry<>(e.getKey(), e.getValue()))
+                        //.peek((e) -> System.out.printf("normal: %s - Stripped: %s\n", e.getKey().toString(), e.getValue().toString()))
+                        .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey, (prev, curr) -> prev));
+            }
+        });
+
     }
 }
