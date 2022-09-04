@@ -27,6 +27,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -127,12 +128,6 @@ public class XpItemInserterEntity extends BlockEntity implements ImplementedInve
                             break;
 
                         }
-                        if (itemStackToInsert.getItem().equals(Items.SCULK)) {
-                            mbToInsert += XpStorage.MB_PER_XP * itemStackToInsert.getCount();
-                            entity.getItems().set(i, ItemStack.EMPTY);
-                            break;
-
-                        }
                     }
                 }
                 if (mbToInsert <= 0) {
@@ -152,7 +147,7 @@ public class XpItemInserterEntity extends BlockEntity implements ImplementedInve
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("block.xps_additions.xp_item_inserter");
+        return new TranslatableText("block.xps_additions.xp_item_inserter");
     }
 
     @Nullable
