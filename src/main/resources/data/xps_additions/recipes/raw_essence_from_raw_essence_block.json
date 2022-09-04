@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "xps_additions:raw_essence"
+      "item": "xps_additions:raw_essence_block"
     }
   ],
   "result": {
-    "item": "xps_additions:raw_essence_shard",
+    "item": "xps_additions:raw_essence",
     "count": 4
   }
 }

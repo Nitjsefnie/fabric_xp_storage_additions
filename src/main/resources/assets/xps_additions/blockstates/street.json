@@ -1,0 +1,44 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "xps_additions:block/street_base"
+      }
+    },
+    {
+      "apply": {
+        "model": "xps_additions:block/street_side"
+      },
+      "when": {
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "xps_additions:block/street_top_north"
+      },
+      "when": {
+        "north": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "xps_additions:block/street_side",
+        "y": 180
+      },
+      "when": {
+        "east": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "xps_additions:block/street_top_north",
+        "y": 180
+      },
+      "when": {
+        "south": "false"
+      }
+    }
+
+  ]
+}

@@ -8,8 +8,8 @@
   "item.xps_additions.essence_crystal": "Essenzkristall",
 
   "item.tooltip.mystical_candy": "Dropt %sEP beim essen",
-  "item.tooltip.mystical_candy_effect_Giggle": "Schluckauf %s chance: %s",
-  "item.tooltip.mystical_candy_effect_Haste": "Haste %s chance %s",
+  "item.tooltip.mystical_candy_effect": "%s %s chance: %s",
+  "item.tooltip.street": "Laufgeschwindigkeit %s",
 
   "block.xps_additions.soul_copper_door": "Seelenkupfertür",
   "block.xps_additions.soul_copper_trap_door": "Seelenkupferfalltür",
@@ -18,5 +18,7 @@
   "block.xps_additions.cut_soul_copper": "Geschnittener Seelenkupferblock",
   "block.xps_additions.cut_soul_copper_slab": "Geschnittene Seelenkupferstufe",
   "block.xps_additions.cut_soul_copper_stairs": "Geschnittene Seelenkupfertreppe",
-  "block.xps_additions.xp_item_inserter": "EP Gegenstandseinfüller"
+  "block.xps_additions.xp_item_inserter": "EP Gegenstandseinfüller",
+  "block.xps_additions.raw_essence_block": "Roher Essenz Block",
+  "block.xps_additions.street": "Straße"
 }

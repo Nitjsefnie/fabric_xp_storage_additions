@@ -29,8 +29,8 @@ dependencies {
 
 	//modImplementation "com.notker.xp_storage:xp_obelisk:${project.xp_obelisk_version}"
 	modImplementation files("depend/xp_obelisk-0.4.5.r_for_1.18.x_Fabric.jar")
-}
 
+}
 processResources {
 	inputs.property "version", project.version
 

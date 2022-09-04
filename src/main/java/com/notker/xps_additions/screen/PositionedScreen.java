@@ -3,13 +3,11 @@ package com.notker.xps_additions.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import com.notker.xp_storage.XpFunctions;
-import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 
 public class PositionedScreen extends HandledScreen<ScreenHandler> {
@@ -31,26 +29,26 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         drawMouseoverTooltip(matrices, mouseX, mouseY);
 
         //Draw Storage Title
-        int xStorage = (width - textRenderer.getWidth(new TranslatableText("block.xps.block_xp_obelisk"))) / 2;
-        textRenderer.draw(matrices, new TranslatableText("block.xps.block_xp_obelisk"), xStorage, y - 15, 4210752);
+        int xStorage = (width - textRenderer.getWidth(Text.translatable("block.xps.block_xp_obelisk"))) / 2;
+        textRenderer.draw(matrices, Text.translatable("block.xps.block_xp_obelisk"), xStorage, y - 15, 4210752);
 
         //Draw Xp bar Background
 
         //Vanilla Xp Bar
-        RenderSystem.setShaderTexture(0, DrawableHelper.GUI_ICONS_TEXTURE);
-        int v = 64;
-        int barWidth = 182;
-        int barHeight = 5;
+        //RenderSystem.setShaderTexture(0, DrawableHelper.GUI_ICONS_TEXTURE);
+        //int v = 64;
+        //int barWidth = 182;
+        //int barHeight = 5;
 
         //Custom xp Bar
-        //RenderSystem.setShaderTexture(0, TEXTURE);
-        //int v = 236;
-        //int barWidth = 162;
-        //int barHeight = 5;
+        RenderSystem.setShaderTexture(0, TEXTURE);
+        int v = 228; //236
+        int barWidth = 164; // 162
+        int barHeight = 7; //5
 
         int[] color = {0xec00b8, 0x99ff33}; //Purple - Green
 
-        drawTexture(matrices,  (width - barWidth) / 2  , y + 5, 0, v, barWidth, barHeight);
+        drawTexture(matrices,  (width - barWidth) / 2  , y + (barHeight - 1), 0, v, barWidth, barHeight);
 
         int level = XpFunctions.getLevelFromExp(xp);
         int excess_xp = xp - XpFunctions.get_total_xp_value_from_level(level);
@@ -60,7 +58,7 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         //Draw Xp bar Overlay
         if (container_progress > 0) {
            int scaledWidth = (int)(container_progress * (float)barWidth + 1f);
-            drawTexture(matrices, (width - barWidth) / 2 , y + 5, 0, v + barHeight, scaledWidth, barHeight);
+            drawTexture(matrices, (width - barWidth) / 2 , y + (barHeight - 1), 0, v + barHeight, scaledWidth, barHeight);
         }
 
         //Draw Level String
