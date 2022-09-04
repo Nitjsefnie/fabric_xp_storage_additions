@@ -6,11 +6,11 @@
   ],
   "key": {
     "x": {
-      "item": "xps_additions:raw_essence_shard"
+      "item": "xps_additions:raw_essence"
     }
   },
   "result": {
-    "item": "xps_additions:raw_essence",
+    "item": "xps_additions:raw_essence_block",
     "count": 1
   }
 }
