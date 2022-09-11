@@ -15,6 +15,9 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
     private static final Identifier TEXTURE = new Identifier("xps_additions", "textures/gui/container/xp_item_inserter.png");
     BoxScreenHandler screenHandler;
 
+    int[] color = {0xec00b8, 0x99ff33, 4210752, 0x000000}; //Purple - Green - light Gray - Black
+
+
     public PositionedScreen(ScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
         screenHandler = (BoxScreenHandler) handler;
@@ -25,13 +28,15 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         int xp = screenHandler.getSyncedNumber();
         int y = ((height - backgroundHeight) / 2) + 6;
 
+
+
         //renderBackground(matrices);
         super.render(matrices, mouseX, mouseY, delta);
         drawMouseoverTooltip(matrices, mouseX, mouseY);
 
         //Draw Storage Title
-        int xStorage = (width - textRenderer.getWidth(new TranslatableText("block.xps.block_xp_obelisk"))) / 2;
-        textRenderer.draw(matrices, new TranslatableText("block.xps.block_xp_obelisk"), xStorage, y - 15, 4210752);
+        int xStorage = (width - textRenderer.getWidth(Text.translatable("block.xps.block_xp_obelisk"))) / 2;
+        textRenderer.draw(matrices, Text.translatable("block.xps.block_xp_obelisk"), xStorage, y - 15, color[3]);
 
         //Draw Xp bar Background
 
@@ -47,7 +52,7 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         int barWidth = 164; // 162
         int barHeight = 7; //5
 
-        int[] color = {0xec00b8, 0x99ff33}; //Purple - Green
+
 
         drawTexture(matrices,  (width - barWidth) / 2  , y + (barHeight - 1), 0, v, barWidth, barHeight);
 
@@ -91,5 +96,10 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         int x = (width - backgroundWidth) / 2;
         int y = -17 + (height - backgroundHeight) / 2;
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
+    }
+
+    protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
+        this.textRenderer.draw(matrices, this.title, (float)this.titleX, (float)this.titleY, color[3]);
+        this.textRenderer.draw(matrices, this.playerInventoryTitle, (float)this.playerInventoryTitleX, (float)this.playerInventoryTitleY, color[3]);
     }
 }
