@@ -35,8 +35,8 @@ public class PositionedScreen extends HandledScreen<ScreenHandler> {
         drawMouseoverTooltip(matrices, mouseX, mouseY);
 
         //Draw Storage Title
-        int xStorage = (width - textRenderer.getWidth(Text.translatable("block.xps.block_xp_obelisk"))) / 2;
-        textRenderer.draw(matrices, Text.translatable("block.xps.block_xp_obelisk"), xStorage, y - 15, color[3]);
+        int xStorage = (width - textRenderer.getWidth(new TranslatableText("block.xps.block_xp_obelisk"))) / 2;
+        textRenderer.draw(matrices, new TranslatableText("block.xps.block_xp_obelisk"), xStorage, y - 15, color[3]);
 
         //Draw Xp bar Background
 
