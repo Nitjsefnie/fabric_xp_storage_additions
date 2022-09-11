@@ -7,6 +7,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class Street_Item extends BlockItem {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         super.appendTooltip(stack, world, tooltip, tooltipContext);
 
-        tooltip.add(Text.translatable("item.tooltip.street", TooltipHelper.chanceToString(XpsAdditions.RUNNING_SPEED)));
+        tooltip.add(new TranslatableText("item.tooltip.street", TooltipHelper.chanceToString(XpsAdditions.RUNNING_SPEED)));
 
     }
 }

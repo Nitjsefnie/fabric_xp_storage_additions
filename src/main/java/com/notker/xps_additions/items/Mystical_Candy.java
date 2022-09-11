@@ -4,6 +4,7 @@ import com.notker.xp_storage.XpStorage;
 import com.notker.xps_additions.XpsAdditions;
 import com.notker.xps_additions.TooltipHelper;
 import com.notker.xps_additions.effects.GiggleStatusEffect;
+import net.minecraft.client.gui.screen.ScreenTexts;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.LivingEntity;
@@ -13,9 +14,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.ScreenTexts;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
@@ -54,17 +55,17 @@ public class Mystical_Candy extends Item {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         super.appendTooltip(stack, world, tooltip, tooltipContext);
 
-        tooltip.add(Text.translatable("item.tooltip.mystical_candy_effect",
-                Text.translatable("effect.xps_additions.giggle"),
+        tooltip.add(new TranslatableText("item.tooltip.mystical_candy_effect",
+                new TranslatableText("effect.xps_additions.giggle"),
                 TooltipHelper.potionTooltipHelper(XpsAdditions.GIGGLE_EFFECT_DURATION),
                 TooltipHelper.chanceToString(XpsAdditions.GIGGLE_EFFECT_CHANCE)
         ).formatted(new GiggleStatusEffect().getCategory().getFormatting()));
-        tooltip.add(Text.translatable("item.tooltip.mystical_candy_effect",
-                Text.translatable("effect.minecraft.haste"),
+        tooltip.add(new TranslatableText("item.tooltip.mystical_candy_effect",
+                new TranslatableText("effect.minecraft.haste"),
                 TooltipHelper.potionTooltipHelper(XpsAdditions.HASTE_EFFECT_AMPLIFIER, XpsAdditions.HASTE_EFFECT_DURATION),
                 TooltipHelper.chanceToString(XpsAdditions.HASTE_EFFECT_CHANCE)
         ).formatted(StatusEffects.HASTE.getCategory().getFormatting()));
-        tooltip.add(ScreenTexts.EMPTY);
-        tooltip.add(Text.translatable("item.tooltip.mystical_candy", XpsAdditions.XP_PER_MYSTICAL_CANDY).formatted(Formatting.WHITE));
+        tooltip.add(ScreenTexts.LINE_BREAK);
+        tooltip.add(new TranslatableText("item.tooltip.mystical_candy", XpsAdditions.XP_PER_MYSTICAL_CANDY).formatted(Formatting.WHITE));
     }
 }
