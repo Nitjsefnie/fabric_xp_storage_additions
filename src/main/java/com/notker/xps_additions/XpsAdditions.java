@@ -11,13 +11,15 @@ import com.notker.xps_additions.regestry.AdditionItems;
 import com.notker.xps_additions.screen.BoxScreenHandler;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.block.Block;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.registry.Registries;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,8 +60,12 @@ public class XpsAdditions implements ModInitializer {
     public void onInitialize() {
         AdditionBlocks.registerBlocks();
         AdditionItems.registerItems();
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(MOD_ID, "giggle"), GIGGLE);
-        Registry.register(Registry.SCREEN_HANDLER, new Identifier(MOD_ID, "xp_item_inserter"), BOX_SCREEN_HANDLER);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "giggle"), GIGGLE);
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(MOD_ID, "xp_item_inserter"), BOX_SCREEN_HANDLER);
+
+        ItemGroupEvents.modifyEntriesEvent(XpStorage.ITEM_GROUP).register(content -> {
+            content.add(AdditionItems.STREET_ITEM);
+        });
 
 
         ServerWorldEvents.LOAD.register((server, level) -> {
@@ -79,7 +85,7 @@ public class XpsAdditions implements ModInitializer {
                 StaffOfRebark.STRIPPED_BLOCKS = strippedBlock_Block;
 
                 // InfoLogg Blocks
-                strippedBlock_Block.forEach((block, block2) -> XpsAdditions.LOGGER.info(staffName + " add: " + Registry.BLOCK.getId(block) + " to " +  Registry.BLOCK.getId(block2)));
+                strippedBlock_Block.forEach((block, block2) -> XpsAdditions.LOGGER.info(staffName + " add: " + Registries.BLOCK.getId(block) + " to " +  Registries.BLOCK.getId(block2)));
                 // End Staff Logging
                 LOGGER.info("Finished adding " + strippedBlock_Block.size() + " Blocks to " + staffName);
             }

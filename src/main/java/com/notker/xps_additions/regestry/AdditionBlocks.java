@@ -9,8 +9,9 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 
 public class AdditionBlocks {
 
@@ -33,18 +34,18 @@ public class AdditionBlocks {
 
 
     public static void registerBlocks() {
-        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_door"), SOUL_COPPER_DOOR);
-        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_trap_door"), SOUL_COPPER_TRAP_DOOR);
-        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_pressure_plate"), SOUL_COPPER_PRESSURE_PLATE);
-        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_bars"), SOUL_COPPER_BARS);
-        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("cut_soul_copper"), CUT_SOUL_COPPER);
-        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("cut_soul_copper_slab"), CUT_SOUL_COPPER_SLAB);
-        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("cut_soul_copper_stairs"), CUT_SOUL_COPPER_STAIRS);
-        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("xp_item_inserter"), XP_ITEM_INSERTER);
-        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("raw_essence_block"), RAW_ESSENCE_BLOCK);
-        Registry.register(Registry.BLOCK, XpsAdditions.createModIdIdentifier("street"), STREET);
+        Registry.register(Registries.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_door"), SOUL_COPPER_DOOR);
+        Registry.register(Registries.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_trap_door"), SOUL_COPPER_TRAP_DOOR);
+        Registry.register(Registries.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_pressure_plate"), SOUL_COPPER_PRESSURE_PLATE);
+        Registry.register(Registries.BLOCK, XpsAdditions.createModIdIdentifier("soul_copper_bars"), SOUL_COPPER_BARS);
+        Registry.register(Registries.BLOCK, XpsAdditions.createModIdIdentifier("cut_soul_copper"), CUT_SOUL_COPPER);
+        Registry.register(Registries.BLOCK, XpsAdditions.createModIdIdentifier("cut_soul_copper_slab"), CUT_SOUL_COPPER_SLAB);
+        Registry.register(Registries.BLOCK, XpsAdditions.createModIdIdentifier("cut_soul_copper_stairs"), CUT_SOUL_COPPER_STAIRS);
+        Registry.register(Registries.BLOCK, XpsAdditions.createModIdIdentifier("xp_item_inserter"), XP_ITEM_INSERTER);
+        Registry.register(Registries.BLOCK, XpsAdditions.createModIdIdentifier("raw_essence_block"), RAW_ESSENCE_BLOCK);
+        Registry.register(Registries.BLOCK, XpsAdditions.createModIdIdentifier("street"), STREET);
 
 
-        Registry.register(Registry.BLOCK_ENTITY_TYPE, XpsAdditions.createModIdIdentifier("entity_xp_obelisk"), XP_ITEM_INSERTER_ENTITY);
+        Registry.register(Registries.BLOCK_ENTITY_TYPE, XpsAdditions.createModIdIdentifier("entity_xp_obelisk"), XP_ITEM_INSERTER_ENTITY);
     }
 }

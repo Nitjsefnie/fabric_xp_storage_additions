@@ -1,6 +1,5 @@
 package com.notker.xps_additions.regestry;
 
-import com.notker.xp_storage.XpStorage;
 import com.notker.xps_additions.XpsAdditions;
 import com.notker.xps_additions.items.Mystical_Candy;
 import com.notker.xps_additions.items.StaffOfRebark;
@@ -9,8 +8,9 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Rarity;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 
 public class AdditionItems {
 
@@ -26,7 +26,7 @@ public class AdditionItems {
 
 
     private static Item.Settings newSettings() {
-        return new Item.Settings().group(XpStorage.ITEM_GROUP);
+        return new Item.Settings();
     }
 
 
@@ -53,23 +53,23 @@ public class AdditionItems {
 
     public static void registerItems() {
         //Items
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("mystical_candy"), MYSTICAL_CANDY);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("raw_essence"), RAW_ESSENCE);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("raw_essence_shard"), RAW_ESSENCE_SHARD);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("staff_of_rebark"), STAFF_OF_REBARK);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("essence_crystal"), ESSENCE_CRYSTAL);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("mystical_candy"), MYSTICAL_CANDY);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("raw_essence"), RAW_ESSENCE);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("raw_essence_shard"), RAW_ESSENCE_SHARD);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("staff_of_rebark"), STAFF_OF_REBARK);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("essence_crystal"), ESSENCE_CRYSTAL);
 
         //BlockItems
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_door"), SOUL_COPPER_DOOR_ITEM);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_trap_door"), SOUL_COPPER_TRAP_DOOR_ITEM);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_pressure_plate"), SOUL_COPPER_PRESSURE_PLATE_ITEM);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_bars"), SOUL_COPPER_BARS_ITEM);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper"), CUT_SOUL_COPPER_ITEM);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper_slab"), CUT_SOUL_COPPER_SLAB_ITEM);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper_stairs"), CUT_SOUL_COPPER_STAIRS_ITEM);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("xp_item_inserter"), XP_ITEM_INSERTER_ITEM);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("raw_essence_block"), RAW_ESSENCE_BLOCK_ITEM);
-        Registry.register(Registry.ITEM, XpsAdditions.createModIdIdentifier("street"), STREET_ITEM);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_door"), SOUL_COPPER_DOOR_ITEM);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_trap_door"), SOUL_COPPER_TRAP_DOOR_ITEM);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_pressure_plate"), SOUL_COPPER_PRESSURE_PLATE_ITEM);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("soul_copper_bars"), SOUL_COPPER_BARS_ITEM);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper"), CUT_SOUL_COPPER_ITEM);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper_slab"), CUT_SOUL_COPPER_SLAB_ITEM);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("cut_soul_copper_stairs"), CUT_SOUL_COPPER_STAIRS_ITEM);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("xp_item_inserter"), XP_ITEM_INSERTER_ITEM);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("raw_essence_block"), RAW_ESSENCE_BLOCK_ITEM);
+        Registry.register(Registries.ITEM, XpsAdditions.createModIdIdentifier("street"), STREET_ITEM);
 
         //Fuel
         FuelRegistry.INSTANCE.add(RAW_ESSENCE, XpsAdditions.RAW_ESSENCE_FUEL_DURATION);

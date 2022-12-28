@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundEvents;
 
 public class SoulCopperPressurePlate extends PressurePlateBlock {
     public SoulCopperPressurePlate() {
@@ -12,7 +13,8 @@ public class SoulCopperPressurePlate extends PressurePlateBlock {
                 .sounds(BlockSoundGroup.METAL)
                 .strength(0.5f, 0.5f)
                 .nonOpaque()
-                .requiresTool()
-        );
+                .requiresTool(),
+                SoundEvents.BLOCK_IRON_DOOR_CLOSE,
+                SoundEvents.BLOCK_IRON_DOOR_OPEN);
     }
 }

@@ -23,7 +23,6 @@ import java.util.List;
 
 public class Mystical_Candy extends Item {
     public Mystical_Candy() { super(new Item.Settings()
-            .group(XpStorage.ITEM_GROUP)
             .food(new FoodComponent.Builder()
                     .statusEffect(new StatusEffectInstance(XpsAdditions.GIGGLE, XpsAdditions.GIGGLE_EFFECT_DURATION, 0), XpsAdditions.GIGGLE_EFFECT_CHANCE)
                     .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, XpsAdditions.HASTE_EFFECT_DURATION, XpsAdditions.HASTE_EFFECT_AMPLIFIER), XpsAdditions.HASTE_EFFECT_CHANCE)

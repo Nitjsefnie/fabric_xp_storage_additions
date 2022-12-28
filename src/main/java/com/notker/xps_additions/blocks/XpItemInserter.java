@@ -73,7 +73,7 @@ public class XpItemInserter extends BlockWithEntity implements Waterloggable {
     @SuppressWarnings("deprecation")
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(Properties.WATERLOGGED)) {
-            world.createAndScheduleFluidTick(pos, Fluids.WATER,Fluids.WATER.getTickRate(world));
+            world.getFluidTickScheduler().isTicking(pos, Fluids.WATER);
         }
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
@@ -89,7 +89,7 @@ public class XpItemInserter extends BlockWithEntity implements Waterloggable {
             BlockState blockState = state.with(Properties.WATERLOGGED, true);
 
             world.setBlockState(pos, blockState, 3);
-            world.createAndScheduleFluidTick(pos, fluidState.getFluid(), fluidState.getFluid().getTickRate(world));
+            world.getFluidTickScheduler().isTicking(pos, Fluids.WATER);
             return true;
         } else {
             return false;

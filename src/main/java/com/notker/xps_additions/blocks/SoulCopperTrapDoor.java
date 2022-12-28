@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Material;
 import net.minecraft.block.TrapdoorBlock;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundEvents;
 
 public class SoulCopperTrapDoor extends TrapdoorBlock {
 
@@ -13,7 +14,8 @@ public class SoulCopperTrapDoor extends TrapdoorBlock {
                 .sounds(BlockSoundGroup.METAL)
                 .strength(5f, 5f)
                 .nonOpaque()
-                .requiresTool()
-        );
+                .requiresTool(),
+                SoundEvents.BLOCK_IRON_DOOR_CLOSE,
+                SoundEvents.BLOCK_IRON_DOOR_OPEN);
     }
 }

@@ -13,8 +13,9 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 
 
 public class XpsAdditionsClient implements ClientModInitializer {
@@ -43,7 +44,7 @@ public class XpsAdditionsClient implements ClientModInitializer {
                 StaffOfRebark.STRIPPED_BLOCKS = strippedBlock_Block;
 
                 // InfoLogg Blocks
-                strippedBlock_Block.forEach((block, block2) -> XpsAdditions.LOGGER.info(staffName + " add: " + Registry.BLOCK.getId(block) + " to " +  Registry.BLOCK.getId(block2)));
+                strippedBlock_Block.forEach((block, block2) -> XpsAdditions.LOGGER.info(staffName + " add: " + Registries.BLOCK.getId(block) + " to " +  Registries.BLOCK.getId(block2)));
                 // End Staff Logging
                 XpsAdditions.LOGGER.info("Finished adding " + strippedBlock_Block.size() + " Blocks to " + staffName);
             }
