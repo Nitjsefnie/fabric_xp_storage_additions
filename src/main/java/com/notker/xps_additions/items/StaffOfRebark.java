@@ -26,7 +26,8 @@ public class StaffOfRebark extends Item {
 
     private Optional<BlockState> getUnStrippedState(BlockState state) {
         List<BlockState> list =  STRIPPED_BLOCKS.get(state.getBlock()).stream().map(block -> block.getDefaultState().with(PillarBlock.AXIS, state.get(PillarBlock.AXIS))).toList();
-        return list.stream().findAny();
+        // Return random Blockstate,
+        return list.stream().skip((int) (list.size() * Math.random())).findAny();
     }
 
 
