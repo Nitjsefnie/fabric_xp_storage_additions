@@ -64,6 +64,21 @@ public class XpsAdditions implements ModInitializer {
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(MOD_ID, "xp_item_inserter"), BOX_SCREEN_HANDLER);
 
         ItemGroupEvents.modifyEntriesEvent(XpStorage.ITEM_GROUP).register(content -> {
+            content.add(AdditionItems.MYSTICAL_CANDY);
+            content.add(AdditionItems.RAW_ESSENCE);
+            content.add(AdditionItems.RAW_ESSENCE_SHARD);
+            content.add(AdditionItems.STAFF_OF_REBARK);
+            content.add(AdditionItems.ESSENCE_CRYSTAL);
+
+            content.add(AdditionItems.SOUL_COPPER_DOOR_ITEM);
+            content.add(AdditionItems.SOUL_COPPER_TRAP_DOOR_ITEM);
+            content.add(AdditionItems.SOUL_COPPER_PRESSURE_PLATE_ITEM);
+            content.add(AdditionItems.SOUL_COPPER_BARS_ITEM);
+            content.add(AdditionItems.CUT_SOUL_COPPER_ITEM);
+            content.add(AdditionItems.CUT_SOUL_COPPER_SLAB_ITEM);
+            content.add(AdditionItems.CUT_SOUL_COPPER_STAIRS_ITEM);
+            content.add(AdditionItems.XP_ITEM_INSERTER_ITEM);
+            content.add(AdditionItems.RAW_ESSENCE_BLOCK_ITEM);
             content.add(AdditionItems.STREET_ITEM);
         });
 
