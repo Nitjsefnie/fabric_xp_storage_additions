@@ -1,5 +1,6 @@
 package com.notker.xps_additions.items;
 
+import com.google.common.collect.Multimap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
@@ -12,19 +13,21 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.Map;
+import java.util.List;
 import java.util.Optional;
 
 
 public class StaffOfRebark extends Item {
-    public static Map<Block, Block> STRIPPED_BLOCKS = null;
+    public static Multimap<Block, Block> STRIPPED_BLOCKS = null;
     public StaffOfRebark(Settings settings) {
         super(settings);
     }
 
 
     private Optional<BlockState> getUnStrippedState(BlockState state) {
-        return Optional.ofNullable(STRIPPED_BLOCKS.get(state.getBlock())).map((block) -> block.getDefaultState().with(PillarBlock.AXIS, state.get(PillarBlock.AXIS)));
+        List<BlockState> list =  STRIPPED_BLOCKS.get(state.getBlock()).stream().map(block -> block.getDefaultState().with(PillarBlock.AXIS, state.get(PillarBlock.AXIS))).toList();
+        // Return random Blockstate,
+        return list.stream().skip((int) (list.size() * Math.random())).findAny();
     }
 
 
